@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingsManager : MonoBehaviour
+public class SettingsTransitions : MonoBehaviour
 {
     public Button ButtonControll;
     public Button ButtonGraphics;
@@ -65,7 +63,10 @@ public class SettingsManager : MonoBehaviour
         }
 
         if (Input.GetKeyUp(KeyCode.Escape))
+        {
             gameObject.SetActive(false);
+            MenuManager.IsOpenedSettings = false;
+        }
     }
 
     private void Init()

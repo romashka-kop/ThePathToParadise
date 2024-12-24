@@ -13,7 +13,7 @@ public class MenuManager : MonoBehaviour
     public Button SettingsButton;
     public Button QuitButton;
 
-    private static bool _isOpenedSettings = false;
+    public static bool IsOpenedSettings = false;
     private static bool _isOpenedNewGame = false;
 
     private void Awake()
@@ -27,7 +27,7 @@ public class MenuManager : MonoBehaviour
         NewGameButton.onClick.AddListener(NewGame);
         SettingsButton.onClick.AddListener(Settings);
         QuitButton.onClick.AddListener(ExitGame);
-        PanelSettings.SetActive(_isOpenedSettings);
+        PanelSettings.SetActive(IsOpenedSettings);
         PanelNewGame.SetActive(_isOpenedNewGame);
     }
 
@@ -42,8 +42,8 @@ public class MenuManager : MonoBehaviour
     }
     public void Settings()
     {
-        _isOpenedSettings = !_isOpenedSettings;
-        PanelSettings.SetActive(_isOpenedSettings);
+        IsOpenedSettings = !IsOpenedSettings;
+        PanelSettings.SetActive(IsOpenedSettings);
     }
     public void ExitGame()
     {

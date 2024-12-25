@@ -1,9 +1,10 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UserInputKey : MonoBehaviour
 {
+    public static GameObject game;
+
     public TextMeshProUGUI[] textButtons;
 
     private void Update()
@@ -14,20 +15,32 @@ public class UserInputKey : MonoBehaviour
             {
                 if (Input.GetKeyDown(key))
                 {
-                    Debug.Log("Key pressed: " + key);
+                    bool isNotCopy = false;
                     foreach (TextMeshProUGUI textPro in textButtons)
                     {
-                        Debug.Log("hdfjhdkhf");
                         if (key.ToString() == textPro.text)
                         {
-                            Debug.Log("Эта кнопка занята");
+                            gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Такая кнопка уже задана, выбери другую.(Backspace - отмена)";
+                            isNotCopy = false;
+                            break;
                         }
                         else
                         {
-                            textPro.text = key.ToString();
-                            textPro.GetComponentInParent<SettingsInputButton>().SetKeyCode(key);
-                            gameObject.SetActive(false);
+                            isNotCopy = true;
+                            gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Нажми на нужную кнопку.(Backspace - отмена)";
                         }
+                    }
+                    if(isNotCopy)
+                    {
+                        if (key == KeyCode.Backspace)
+                        {
+                            Debug.Log("Отмена");
+                            gameObject.SetActive(false);
+                            return;
+                        }
+                        game.GetComponentInChildren<TextMeshProUGUI>().text = key.ToString();
+                        game.GetComponent<SettingsInputButton>().key = key;
+                        gameObject.SetActive(false);
                     }
                 }
             }

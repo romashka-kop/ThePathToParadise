@@ -86,20 +86,11 @@ public class SettingsTransitions : MonoBehaviour
         Vector2 maxSize = new Vector2(517, 131);
 
         foreach (Button button in buttons)
-        {
-            if (activButton == button)
-                button.GetComponent<RectTransform>().sizeDelta = maxSize;
-            else
-                button.GetComponent<RectTransform>().sizeDelta = minSize;
-        }
+            button.GetComponent<RectTransform>().sizeDelta = activButton == button ? maxSize : minSize;
 
         foreach (GameObject gm in menu)
-        {
-            if (activPanel == gm)
-                gm.SetActive(true);
-            else
-                gm.SetActive(false);
-        }
+            gm.SetActive(activPanel == gm);
+
         activMenuSetting = ActivMenuSetting.None;
     }
 
@@ -109,27 +100,10 @@ public class SettingsTransitions : MonoBehaviour
         GameObject[] panels = {PanelMouseSettings, PanelKeyboardSettings }; 
 
         foreach (Button button in buttons)
-        {
-            if(activButton == button)
-            {
-                button.GetComponent<Image>().color = new Color(1, 1, 1);
-            }
-            else
-            {
-                button.GetComponent<Image>().color = new Color(0.5566038f, 0.5566038f, 0.5566038f);
-            }
-        }
+            button.GetComponent<Image>().color = activButton == button ? new Color(1, 1, 1) : new Color(0.5566038f, 0.5566038f, 0.5566038f);
+
         foreach (GameObject gm in panels)
-        {
-            if(activPanel == gm)
-            {
-                gm.SetActive(true);
-            }
-            else
-            {
-                gm.SetActive(false);
-            }
-        }
+            gm.SetActive(activPanel == gm);
     }
 
     private void OpenControllSettings()

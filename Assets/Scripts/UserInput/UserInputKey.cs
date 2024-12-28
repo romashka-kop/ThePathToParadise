@@ -34,7 +34,6 @@ public class UserInputKey : MonoBehaviour
                     {
                         if (key == KeyCode.Backspace)
                         {
-                            Debug.Log("Отмена");
                             gameObject.SetActive(false);
                             return;
                         }

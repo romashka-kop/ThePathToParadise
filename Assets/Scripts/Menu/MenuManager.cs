@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject PanelSettings;
-    public GameObject PanelNewGame;
+    public GameObject CanvasSettings;
+    public GameObject CanvasNewGame;
 
     public Button ContinueButton;
     public Button NewGameButton;
@@ -27,23 +27,23 @@ public class MenuManager : MonoBehaviour
         NewGameButton.onClick.AddListener(NewGame);
         SettingsButton.onClick.AddListener(Settings);
         QuitButton.onClick.AddListener(ExitGame);
-        PanelSettings.SetActive(IsOpenedSettings);
-        PanelNewGame.SetActive(_isOpenedNewGame);
+        CanvasSettings.SetActive(IsOpenedSettings);
+        CanvasNewGame.SetActive(_isOpenedNewGame);
     }
 
     public void Continue()
     {
-        Debug.Log("Продолжить");
+        /////////////////////////
     }
     public void NewGame()
     {
         _isOpenedNewGame = !_isOpenedNewGame;
-        PanelNewGame.SetActive(_isOpenedNewGame);
+        CanvasNewGame.SetActive(_isOpenedNewGame);
     }
     public void Settings()
     {
         IsOpenedSettings = !IsOpenedSettings;
-        PanelSettings.SetActive(IsOpenedSettings);
+        CanvasSettings.SetActive(IsOpenedSettings);
     }
     public void ExitGame()
     {

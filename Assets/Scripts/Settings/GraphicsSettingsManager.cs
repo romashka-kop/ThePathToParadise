@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GraphicsSettingsManager : MonoBehaviour
@@ -10,6 +11,8 @@ public class GraphicsSettingsManager : MonoBehaviour
     public TMP_Dropdown Smoothing;
     public TMP_Dropdown AnisotropicFiltration;
 
+    public static TMP_Dropdown[] Dropdowns;
+
     private void Awake()
     {
         Init();
@@ -17,12 +20,7 @@ public class GraphicsSettingsManager : MonoBehaviour
 
     private void Init()
     {
-        GraphicQuality.value = QualitySettings.GetQualityLevel();
-        TextureQuality.value = QualitySettings.globalTextureMipmapLimit;
-        Shadows.value = (int)QualitySettings.shadows;
-        ShadowsQuality.value = (int)QualitySettings.shadowResolution;
-        Smoothing.value = QualitySettings.antiAliasing;
-        AnisotropicFiltration.value = (int)QualitySettings.anisotropicFiltering;
+        Dropdowns = new TMP_Dropdown[] { GraphicQuality, TextureQuality, Shadows, ShadowsQuality, Smoothing, AnisotropicFiltration };
 
         GraphicQuality.enabled = false;
         TextureQuality.enabled = false;

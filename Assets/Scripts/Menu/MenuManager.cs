@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,6 +17,10 @@ public class MenuManager : MonoBehaviour
     public static bool IsOpenedSettings = false;
     private static bool _isOpenedNewGame = false;
 
+    public static SaveDataSettings DataSettings = new();
+    public static SaveDataPlayer DataPlayer = new();
+    public static SaveDataScene DataScene = new();
+
     private void Awake()
     {
         Init();
@@ -23,6 +28,13 @@ public class MenuManager : MonoBehaviour
 
     private void Init()
     {
+        DataSettings.Save(DataSettings, "/SettingsData.json");
+        DataSettings = (SaveDataSettings)DataSettings.Load("/SettingsData.json");
+
+        DataPlayer = (SaveDataPlayer)DataPlayer.Load("/PlayerData.json");
+
+        DataScene = (SaveDataScene)DataScene.Load("/SceneData.json");
+
         ContinueButton.onClick.AddListener(Continue);
         NewGameButton.onClick.AddListener(NewGame);
         SettingsButton.onClick.AddListener(Settings);
@@ -33,7 +45,7 @@ public class MenuManager : MonoBehaviour
 
     public void Continue()
     {
-        /////////////////////////
+       /////////
     }
     public void NewGame()
     {

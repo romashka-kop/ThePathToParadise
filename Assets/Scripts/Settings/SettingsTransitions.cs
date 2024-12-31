@@ -24,7 +24,7 @@ public class SettingsTransitions : MonoBehaviour
     public enum ActivPanelSettings { PanelMouseSettings, PanelKeyboardSettings, None };
     public static ActivPanelSettings activPanelSettings = ActivPanelSettings.PanelMouseSettings;
 
-    void Awake()
+    void Start()
     {
         Init();
     }

@@ -1,9 +1,6 @@
 using TMPro;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
-using System.Linq;
 
 public class ControllSettingsManager : MonoBehaviour
 {
@@ -17,8 +14,6 @@ public class ControllSettingsManager : MonoBehaviour
 
     public static SettingsInputButton[] UserButtons;
 
-    public TextMeshProUGUI[] UserButtonsText;
-
     private void Awake()
     {
         Init();
@@ -26,7 +21,7 @@ public class ControllSettingsManager : MonoBehaviour
 
     private void Update()
     {
-        SaveUserButton();
+        SaveUserettings();
     }
 
     private void Init()
@@ -45,20 +40,19 @@ public class ControllSettingsManager : MonoBehaviour
         ChangeUIComponents();
     }
 
-    private void SaveUserButton()
+    private void SaveUserettings()
     {
-        for (int i = 0; i < MenuManager.DataSettings.PlayerControlKeyCode.Count; i++)
+        for (int j = 0; j < MenuManager.DataSettings.PlayerControlKeyCode.Length; j++)
         {
-            foreach (var button in UserButtons)
+            for (int i = 0; i < UserButtons.Length; i++)
             {
-                if (button.direction == MenuManager.DataSettings.PlayerControlKeyCode.ElementAt(i).Key)
-                {
-                    MenuManager.DataSettings.PlayerControlKeyCode.Remove(MenuManager.DataSettings.PlayerControlKeyCode.ElementAt(i).Key);
-                    MenuManager.DataSettings.PlayerControlKeyCode.Add(button.direction, button.key);
-                }
+                if ((int)UserButtons[i].direction == j)
+                    MenuManager.DataSettings.PlayerControlKeyCode[j] = UserButtons[i].key;
             }
         }
         MenuManager.DataSettings.Save(MenuManager.DataSettings, "/SettingsData.json");
+        MenuManager.DataSettings.Sensivity = Sensitivity;
+        MenuManager.DataSettings.IsOnVSync = IsOnVSync;
     }
 
     private void ChangeUIComponents()
@@ -68,12 +62,14 @@ public class ControllSettingsManager : MonoBehaviour
 
         for (int i = 0; i < UserButtons.Length; i++)
         {
-            foreach (var keys in MenuManager.DataSettings.PlayerControlKeyCode)
+            for (int j = 0; j < MenuManager.DataSettings.PlayerControlKeyCode.Length; j++)
             {
-                if (UserButtons[i].direction == keys.Key)
-                    UserButtons[i].key = keys.Value;
+                if ((int)UserButtons[i].direction == j)
+                {
+                    UserButtons[i].key = MenuManager.DataSettings.PlayerControlKeyCode[j];
+                    UserButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = UserButtons[i].key.ToString();
+                }
             }
-            UserButtons[i].gameObject.transform.GetComponentInChildren<TextMeshProUGUI>().text = UserButtons[i].key.ToString();
         }
     }
 

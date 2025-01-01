@@ -28,7 +28,6 @@ public class MenuManager : MonoBehaviour
 
     private void Init()
     {
-        DataSettings.Save(DataSettings, "/SettingsData.json");
         DataSettings = (SaveDataSettings)DataSettings.Load("/SettingsData.json");
 
         DataPlayer = (SaveDataPlayer)DataPlayer.Load("/PlayerData.json");

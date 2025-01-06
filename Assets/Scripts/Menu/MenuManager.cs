@@ -21,7 +21,7 @@ public class MenuManager : MonoBehaviour
     public static SaveDataPlayer DataPlayer = new();
     public static SaveDataScene DataScene = new();
 
-    private void Awake()
+    void Awake()
     {
         Init();
     }
@@ -40,6 +40,11 @@ public class MenuManager : MonoBehaviour
         QuitButton.onClick.AddListener(ExitGame);
         CanvasSettings.SetActive(IsOpenedSettings);
         CanvasNewGame.SetActive(_isOpenedNewGame);
+
+        if(DataScene.IndexLvl == 0)
+            ContinueButton.enabled = false;
+        else
+            ContinueButton.enabled = true;
     }
 
     public void Continue()

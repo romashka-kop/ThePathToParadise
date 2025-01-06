@@ -11,6 +11,7 @@ public class ControllSettingsManager : MonoBehaviour
     public Slider SensitivitySlider;
 
     public Toggle ToggleIsOnVsync;
+    public Toggle ToggleIsOffVsync;
 
     public static SettingsInputButton[] UserButtons;
 
@@ -21,7 +22,7 @@ public class ControllSettingsManager : MonoBehaviour
 
     private void Update()
     {
-        SaveUserettings();
+        SaveUserSettings();
     }
 
     private void Init()
@@ -38,9 +39,10 @@ public class ControllSettingsManager : MonoBehaviour
         Sensitivity = MenuManager.DataSettings.Sensivity;
         IsOnVSync = MenuManager.DataSettings.IsOnVSync;
         ChangeUIComponents();
+        ValueChangeIsOnVSync(ToggleIsOnVsync);
     }
 
-    private void SaveUserettings()
+    private void SaveUserSettings()
     {
         for (int j = 0; j < MenuManager.DataSettings.PlayerControlKeyCode.Length; j++)
         {
@@ -59,6 +61,9 @@ public class ControllSettingsManager : MonoBehaviour
     {
         SensitivitySlider.value = Sensitivity;
         ToggleIsOnVsync.isOn = IsOnVSync;
+
+        if(ToggleIsOnVsync.isOn == false)
+            ToggleIsOffVsync.isOn = true;
 
         for (int i = 0; i < UserButtons.Length; i++)
         {

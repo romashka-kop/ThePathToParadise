@@ -36,6 +36,7 @@ public class SaveDataSettings : IData
         else
         {
             Save(this, path);
+            Load(path);
             return null;
         }
     }

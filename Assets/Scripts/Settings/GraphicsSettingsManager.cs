@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GraphicsSettingsManager : MonoBehaviour
@@ -18,9 +17,15 @@ public class GraphicsSettingsManager : MonoBehaviour
         Init();
     }
 
+    private void Update()
+    {
+        SaveGraphic();
+    }
+
     private void Init()
     {
         Dropdowns = new TMP_Dropdown[] { GraphicQuality, TextureQuality, Shadows, ShadowsQuality, Smoothing, AnisotropicFiltration };
+        LoadGraphicSave(Dropdowns);
 
         GraphicQuality.enabled = false;
         TextureQuality.enabled = false;
@@ -49,6 +54,28 @@ public class GraphicsSettingsManager : MonoBehaviour
             AnisotropicFiltration.onValueChanged.AddListener(delegate { ChangeAnisotropicFiltration(AnisotropicFiltration); });
     }
 
+    private void LoadGraphicSave(TMP_Dropdown[] dropdowns)
+    {
+        MenuManager.DataSettings = (SaveDataSettings)MenuManager.DataSettings.Load("SettingsData.json");
+        for(int i = 0; i < dropdowns.Length; i++)
+            dropdowns[i].value = MenuManager.DataSettings.graphicIndexSettings[i];
+
+        ChangeGraphicQuality(GraphicQuality);
+        ChangeTextureQuality(TextureQuality);
+        ChangeShadows(Shadows);
+        ChangeShadowsQuality(ShadowsQuality);
+        ChangeSmoothing(Smoothing);
+        ChangeAnisotropicFiltration(AnisotropicFiltration);
+    }
+
+    private void SaveGraphic()
+    {
+        for (int i = 0; i < Dropdowns.Length; i++)
+            MenuManager.DataSettings.graphicIndexSettings[i] = Dropdowns[i].value;
+
+        MenuManager.DataSettings.Save(MenuManager.DataSettings, "SettingsData.json");
+    }
+
     private void ChangeGraphicQuality(TMP_Dropdown dropdown)
     {
         QualitySettings.SetQualityLevel(dropdown.value, true);
@@ -65,6 +92,7 @@ public class GraphicsSettingsManager : MonoBehaviour
         {
             case 0:
                 QualitySettings.shadows = ShadowQuality.Disable;
+                Debug.Log("lol");
                 break;
             case 1:
                 QualitySettings.shadows = ShadowQuality.HardOnly;

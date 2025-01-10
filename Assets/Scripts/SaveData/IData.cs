@@ -6,5 +6,5 @@ public interface IData
 {
     void Save(IData data, string path);
 
-    IData Load(string path);
+    IData Load(IData data, string path);
 }

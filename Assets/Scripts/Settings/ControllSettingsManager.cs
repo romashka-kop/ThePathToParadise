@@ -20,21 +20,15 @@ public class ControllSettingsManager : MonoBehaviour
         Init();
     }
 
-    private void Update()
-    {
-        SaveUserSettings();
-    }
-
     private void Init()
     {
-        MenuManager.DataSettings = (SaveDataSettings)MenuManager.DataSettings.Load("/SettingsData.json");
-
         if (SensitivitySlider != null)
             SensitivitySlider.onValueChanged.AddListener(delegate { ValueChangeSensitivitySlider(SensitivitySlider); });
 
         if (ToggleIsOnVsync != null)
             ToggleIsOnVsync.onValueChanged.AddListener(delegate { ValueChangeIsOnVSync(ToggleIsOnVsync); });
 
+        MenuManager.DataSettings = (SaveDataSettings)MenuManager.DataSettings.Load(MenuManager.DataSettings,"/SettingsData.json");
         UserButtons = FindObjectsByType<SettingsInputButton>(FindObjectsSortMode.None);
         Sensitivity = MenuManager.DataSettings.Sensivity;
         IsOnVSync = MenuManager.DataSettings.IsOnVSync;
@@ -42,20 +36,20 @@ public class ControllSettingsManager : MonoBehaviour
         ValueChangeIsOnVSync(ToggleIsOnVsync);
     }
 
-    private void SaveUserSettings()
-    {
-        for (int j = 0; j < MenuManager.DataSettings.PlayerControlKeyCode.Length; j++)
-        {
-            for (int i = 0; i < UserButtons.Length; i++)
-            {
-                if ((int)UserButtons[i].direction == j)
-                    MenuManager.DataSettings.PlayerControlKeyCode[j] = UserButtons[i].key;
-            }
-        }
-        MenuManager.DataSettings.Save(MenuManager.DataSettings, "/SettingsData.json");
-        MenuManager.DataSettings.Sensivity = Sensitivity;
-        MenuManager.DataSettings.IsOnVSync = IsOnVSync;
-    }
+    //private void SaveUserSettings()
+    //{
+    //    for (int j = 0; j < MenuManager.DataSettings.PlayerControlKeyCode.Length; j++)
+    //    {
+    //        for (int i = 0; i < UserButtons.Length; i++)
+    //        {
+    //            if ((int)UserButtons[i].direction == j)
+    //                MenuManager.DataSettings.PlayerControlKeyCode[j] = UserButtons[i].key;
+    //        }
+    //    }
+    //    MenuManager.DataSettings.Save(MenuManager.DataSettings, "/SettingsData.json");
+    //    MenuManager.DataSettings.Sensivity = Sensitivity;
+    //    MenuManager.DataSettings.IsOnVSync = IsOnVSync;
+    //}
 
     private void ChangeUIComponents()
     {

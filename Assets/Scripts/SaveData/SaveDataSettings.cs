@@ -26,7 +26,7 @@ public class SaveDataSettings : IData
         File.WriteAllText(Application.persistentDataPath + path, json);
     }
 
-    public IData Load(string path)
+    public IData Load(IData data, string path)
     {
         if (File.Exists(Application.persistentDataPath + path))
         {
@@ -35,9 +35,8 @@ public class SaveDataSettings : IData
         }
         else
         {
-            Save(this, path);
-            Load(path);
-            return null;
+            Save(data, path);
+            return Load(data, path);
         }
     }
 }

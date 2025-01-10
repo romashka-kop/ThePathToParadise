@@ -64,6 +64,11 @@ public class SettingsTransitions : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Escape))
         {
+            SaveControllSettings();
+            SaveGraphicsSettings();
+            SaveSoundSettings();
+            MenuManager.DataSettings.Save(MenuManager.DataSettings, "SettingsData.json");
+
             gameObject.SetActive(false);
             MenuManager.IsOpenedSettings = false;
         }
@@ -76,6 +81,31 @@ public class SettingsTransitions : MonoBehaviour
         ButtonSound.onClick.AddListener(OpenSoundSettings);
         ButtonMouseSettings.onClick.AddListener(OpenMouseSettings);
         ButtonKeyboardSettings.onClick.AddListener(OpenKeyboardSettings);
+    }
+
+    private void SaveControllSettings()
+    {
+        for (int j = 0; j < MenuManager.DataSettings.PlayerControlKeyCode.Length; j++)
+        {
+            for (int i = 0; i < ControllSettingsManager.UserButtons.Length; i++)
+            {
+                if ((int)ControllSettingsManager.UserButtons[i].direction == j)
+                    MenuManager.DataSettings.PlayerControlKeyCode[j] = ControllSettingsManager.UserButtons[i].key;
+            }
+        }
+        MenuManager.DataSettings.Sensivity = ControllSettingsManager.Sensitivity;
+        MenuManager.DataSettings.IsOnVSync = ControllSettingsManager.IsOnVSync;
+    }
+
+    private void SaveGraphicsSettings()
+    {
+        for (int i = 0; i < GraphicsSettingsManager.Dropdowns.Length; i++)
+            MenuManager.DataSettings.graphicIndexSettings[i] = GraphicsSettingsManager.Dropdowns[i].value;
+    }
+
+    private void SaveSoundSettings()
+    {
+        MenuManager.DataSettings.MusicValue = SoundSettingsManager.SoundValue;
     }
 
     private void SwitchMenuSettings(GameObject activPanel, Button activButton)

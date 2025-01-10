@@ -15,18 +15,17 @@ public class SaveDataPlayer : IData
         File.WriteAllText(Application.persistentDataPath + path, json);
     }
 
-    public IData Load(string path)
+    public IData Load(IData data, string path)
     {
         if (File.Exists(Application.persistentDataPath + path))
         {
             string json = File.ReadAllText(Application.persistentDataPath + path);
-            Debug.Log("Данные загружены");
             return JsonUtility.FromJson<SaveDataPlayer>(json);
         }
         else
         {
-            Save(this, path);
-            return null;
+            Save(data, path);
+            return Load(data, path);
         }
     }
 }

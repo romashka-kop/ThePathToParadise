@@ -17,11 +17,6 @@ public class GraphicsSettingsManager : MonoBehaviour
         Init();
     }
 
-    private void Update()
-    {
-        SaveGraphic();
-    }
-
     private void Init()
     {
         Dropdowns = new TMP_Dropdown[] { GraphicQuality, TextureQuality, Shadows, ShadowsQuality, Smoothing, AnisotropicFiltration };
@@ -56,7 +51,7 @@ public class GraphicsSettingsManager : MonoBehaviour
 
     private void LoadGraphicSave(TMP_Dropdown[] dropdowns)
     {
-        MenuManager.DataSettings = (SaveDataSettings)MenuManager.DataSettings.Load("SettingsData.json");
+        MenuManager.DataSettings = (SaveDataSettings)MenuManager.DataSettings.Load(MenuManager.DataSettings,"SettingsData.json");
         for(int i = 0; i < dropdowns.Length; i++)
             dropdowns[i].value = MenuManager.DataSettings.graphicIndexSettings[i];
 
@@ -66,14 +61,6 @@ public class GraphicsSettingsManager : MonoBehaviour
         ChangeShadowsQuality(ShadowsQuality);
         ChangeSmoothing(Smoothing);
         ChangeAnisotropicFiltration(AnisotropicFiltration);
-    }
-
-    private void SaveGraphic()
-    {
-        for (int i = 0; i < Dropdowns.Length; i++)
-            MenuManager.DataSettings.graphicIndexSettings[i] = Dropdowns[i].value;
-
-        MenuManager.DataSettings.Save(MenuManager.DataSettings, "SettingsData.json");
     }
 
     private void ChangeGraphicQuality(TMP_Dropdown dropdown)

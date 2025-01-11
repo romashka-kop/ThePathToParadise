@@ -20,7 +20,6 @@ public class MenuManager : MonoBehaviour
     public static SaveDataPlayer DataPlayer = new();
     public static SaveDataScene DataScene = new();
 
-    private const int _indexEducationlvl = 1;
     private readonly string _urlRoma = "https://vk.com/romashkaaaa_a";
     private readonly string _urlKirill = "https://web.telegram.org/a/#-1001617083906";
 
@@ -54,7 +53,8 @@ public class MenuManager : MonoBehaviour
     }
     public void NewGame()
     {
-        SceneManager.LoadScene(_indexEducationlvl);
+        DataScene.IndexLvl = 1;
+        SceneManager.LoadScene("LoadingScene");
     }
     public void Settings()
     {

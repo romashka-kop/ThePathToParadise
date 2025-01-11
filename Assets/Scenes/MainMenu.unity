@@ -7883,10 +7883,10 @@ GameObject:
   - component: {fileID: 798354107}
   - component: {fileID: 798354106}
   - component: {fileID: 798354105}
-  - component: {fileID: 798354104}
   - component: {fileID: 798354103}
   - component: {fileID: 798354102}
   - component: {fileID: 798354108}
+  - component: {fileID: 798354109}
   m_Layer: 5
   m_Name: CanvasMainMenu
   m_TagString: Untagged
@@ -7932,23 +7932,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798354101}
   m_CullTransparentMesh: 1
---- !u!114 &798354104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798354101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &798354105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8035,6 +8018,23 @@ MonoBehaviour:
   QuitButton: {fileID: 1131412702}
   ToKirill: {fileID: 823475186}
   ToRoma: {fileID: 1443181640}
+--- !u!114 &798354109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798354101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &799489393
 GameObject:
   m_ObjectHideFlags: 0
@@ -17247,10 +17247,10 @@ GameObject:
   - component: {fileID: 1943534188}
   - component: {fileID: 1943534187}
   - component: {fileID: 1943534186}
-  - component: {fileID: 1943534185}
   - component: {fileID: 1943534184}
   - component: {fileID: 1943534183}
   - component: {fileID: 1943534189}
+  - component: {fileID: 1943534190}
   m_Layer: 5
   m_Name: CanvasSettings
   m_TagString: Untagged
@@ -17296,23 +17296,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943534181}
   m_CullTransparentMesh: 1
---- !u!114 &1943534185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943534181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &1943534186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17408,6 +17391,23 @@ MonoBehaviour:
   PanelKeyboardSettings: {fileID: 1329393991}
   PanelGraphicsSettings: {fileID: 1308364927}
   PanelSoundSettings: {fileID: 1390976630}
+--- !u!114 &1943534190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943534181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &1951080986
 GameObject:
   m_ObjectHideFlags: 0

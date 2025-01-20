@@ -92,7 +92,6 @@ public class GraphicsSettingsManager : MonoBehaviour
         {
             case 0:
                 QualitySettings.shadows = ShadowQuality.Disable;
-                Debug.Log("lol");
                 break;
             case 1:
                 QualitySettings.shadows = ShadowQuality.HardOnly;

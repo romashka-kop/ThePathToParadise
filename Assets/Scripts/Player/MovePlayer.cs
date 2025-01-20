@@ -7,24 +7,25 @@ public class MovePlayer : MonoBehaviour
     public float Speed = 0.5f;
     private float _verticalRotation = 0f;
 
-    public GameObject SettingsCanvas;
+    //public GameObject SettingsCanvas;
+
 
     void FixedUpdate()
     {
         MovePlayerPosition();
-        OpenPauseMenu();
+        //OpenPauseMenu();
     }
 
     private void MovePlayerPosition()
     {
-        float mouseX = Input.GetAxis("Mouse X") * MenuManager.DataSettings.Sensivity;
-        float mouseY = Input.GetAxis("Mouse Y") * MenuManager.DataSettings.Sensivity;
+        float mouseX = Input.GetAxis("Mouse X") * MenuManager.DataSettings.Sensivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * MenuManager.DataSettings.Sensivity * Time.deltaTime;
 
-        _verticalRotation -= mouseY * Time.deltaTime;
+        _verticalRotation -= mouseY;
         _verticalRotation = Mathf.Clamp(_verticalRotation, -80f, 80f);
 
         Camera.main.transform.localRotation = Quaternion.Euler(_verticalRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * (mouseX * Time.deltaTime));
+        transform.Rotate(Vector3.up * (mouseX));
 
         Vector3 movement = Vector3.zero;
 

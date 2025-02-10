@@ -1,34 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-    public float Speed = 0.5f;
-    private float _verticalRotation = 0f;
+    public static bool IsGrounded;
 
-    //public GameObject SettingsCanvas;
+    [SerializeField] private float _speedPlayer = 1000f;
+    [SerializeField] private float _forceJump;
 
+    private Rigidbody _gameObj;
+
+    private void Awake()
+    {
+        _gameObj = GetComponent<Rigidbody>();
+    }
 
     void FixedUpdate()
     {
+        RotatePlayer();
         MovePlayerPosition();
-        //OpenPauseMenu();
+        JumpPlayer();
+    }
+
+    private void RotatePlayer()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * MenuManager.DataSettings.Sensivity * Time.deltaTime;
+        _gameObj.angularVelocity = new Vector3(0, mouseX, 0);
     }
 
     private void MovePlayerPosition()
     {
-        float mouseX = Input.GetAxis("Mouse X") * MenuManager.DataSettings.Sensivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * MenuManager.DataSettings.Sensivity * Time.deltaTime;
-
-        _verticalRotation -= mouseY;
-        _verticalRotation = Mathf.Clamp(_verticalRotation, -80f, 80f);
-
-        Camera.main.transform.localRotation = Quaternion.Euler(_verticalRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * (mouseX));
-
-        Vector3 movement = Vector3.zero;
-
         #region Расшифровка массива кнопок
         //Forward = MenuManager.DataSettings.PlayerControlKeyCode[0]
         //Backward = MenuManager.DataSettings.PlayerControlKeyCode[1]
@@ -38,29 +38,40 @@ public class MovePlayer : MonoBehaviour
         //Squat = MenuManager.DataSettings.PlayerControlKeyCode[5]
         #endregion
 
-        if (Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[0])) 
+        Vector3 movement = Vector3.zero;
+
+        if (Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[0]))
             movement += transform.forward;
-            
-        if (Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[1])) 
+
+        if (Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[1]))
             movement -= transform.forward;
-            
-        if (Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[2])) 
+
+        if (Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[2]))
             movement -= transform.right;
-            
-        if (Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[3])) 
+
+        if (Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[3]))
             movement += transform.right;
 
-        movement.Normalize();
-        movement *= Speed * Time.deltaTime;
+        movement *= _speedPlayer * Time.deltaTime;
 
-        transform.position += movement;
+        _gameObj.velocity = movement;
     }
 
-    private void OpenPauseMenu()
+    private void JumpPlayer()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+        if (IsGrounded && Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[4]))
+            _gameObj.velocity = new Vector3(_gameObj.velocity.x, _gameObj.velocity.y+1 * _forceJump);
+    }
 
-        }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "Terrain")
+            IsGrounded = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.tag == "Terrain")
+            IsGrounded = false;
     }
 }

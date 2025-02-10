@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spawn : MonoBehaviour
@@ -6,7 +7,6 @@ public class Spawn : MonoBehaviour
 
     private void Start()
     {
-        gameObject.transform.position = MenuManager.DataPlayer.PlayerPosition;
         SpawnPlayer();
     }
 

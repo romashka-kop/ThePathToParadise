@@ -8,9 +8,12 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private float _forceJump;
 
     private Rigidbody _gameObj;
+    private SaveDataSettings _dataSettings;
+
 
     private void Awake()
     {
+       _dataSettings = new("SettingsData.json");
         _gameObj = GetComponent<Rigidbody>();
     }
 
@@ -23,7 +26,7 @@ public class MovePlayer : MonoBehaviour
 
     private void RotatePlayer()
     {
-        float mouseX = Input.GetAxis("Mouse X") * MenuManager.DataSettings.Sensivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * _dataSettings.Sensivity * Time.deltaTime;
         _gameObj.angularVelocity = new Vector3(0, mouseX, 0);
     }
 
@@ -40,16 +43,16 @@ public class MovePlayer : MonoBehaviour
 
         Vector3 movement = Vector3.zero;
 
-        if (Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[0]))
+        if (Input.GetKey(_dataSettings.PlayerControlKeyCode[0]))
             movement += transform.forward;
 
-        if (Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[1]))
+        if (Input.GetKey(_dataSettings.PlayerControlKeyCode[1]))
             movement -= transform.forward;
 
-        if (Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[2]))
+        if (Input.GetKey(_dataSettings.PlayerControlKeyCode[2]))
             movement -= transform.right;
 
-        if (Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[3]))
+        if (Input.GetKey(_dataSettings.PlayerControlKeyCode[3]))
             movement += transform.right;
 
         movement *= _speedPlayer * Time.deltaTime;
@@ -59,7 +62,7 @@ public class MovePlayer : MonoBehaviour
 
     private void JumpPlayer()
     {
-        if (IsGrounded && Input.GetKey(MenuManager.DataSettings.PlayerControlKeyCode[4]))
+        if (IsGrounded && Input.GetKey(_dataSettings.PlayerControlKeyCode[4]))
             _gameObj.velocity = new Vector3(_gameObj.velocity.x, _gameObj.velocity.y+1 * _forceJump);
     }
 

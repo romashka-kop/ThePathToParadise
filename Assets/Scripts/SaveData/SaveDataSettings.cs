@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
 [System.Serializable]
-public class SaveDataSettings : IData
+public class SaveDataSettings : AbsSaveData
 {
     #region Настройки Графики
     public int[] graphicIndexSettings = { 2, 2, 1, 1, 2, 2 };
@@ -20,23 +21,8 @@ public class SaveDataSettings : IData
     public float MusicValue = 50f;
     #endregion
 
-    public void Save(IData data, string path)
+    public SaveDataSettings(string path)
     {
-        string json = JsonUtility.ToJson(data);
-        File.WriteAllText(Application.persistentDataPath + path, json);
-    }
-
-    public IData Load(IData data, string path)
-    {
-        if (File.Exists(Application.persistentDataPath + path))
-        {
-            string json = File.ReadAllText(Application.persistentDataPath + path);
-            return JsonUtility.FromJson<SaveDataSettings>(json);
-        }
-        else
-        {
-            Save(data, path);
-            return Load(data, path);
-        }
+        Load<SaveDataSettings>(this, path);
     }
 }

@@ -116,6 +116,11 @@ public class SettingsTransitions : MonoBehaviour
         activMenuSetting = ActivMenuSetting.MenuGraphicsSettings;
     }
 
+    private void ApplyAllSettings()
+    {
+
+    }
+
     private void OpenSoundSettings()
     {
         activMenuSetting = ActivMenuSetting.MenuSoundSettings;

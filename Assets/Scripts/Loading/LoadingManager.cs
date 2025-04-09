@@ -9,24 +9,24 @@ public class LoadingManager : MonoBehaviour
 
     private AsyncOperation _asyncOperation;
 
-    void Start()
-    {
-        StartCoroutine(Loading());
-    }
+    //void Start()
+    //{
+    //    StartCoroutine(Loading());
+    //}
 
-    private IEnumerator Loading()
-    {
-        Debug.Log("Загрузка сцены");
-        yield return new WaitForSeconds(1);
+    //private IEnumerator Loading()
+    //{
+    //    //Debug.Log("Загрузка сцены");
+    //    //yield return new WaitForSeconds(1);
 
-        MenuManager.DataScene.IndexLvl += 1;
-        _asyncOperation = SceneManager.LoadSceneAsync(MenuManager.DataScene.IndexLvl);
-        while (_asyncOperation.isDone)
-        {
-            Debug.Log("Цикл");
-            LoadBar.fillAmount = _asyncOperation.progress / 0.9f;
-            Debug.Log(LoadBar.fillAmount);
-            yield return null;
-        }
-    }
+    //    //MenuManager.DataScene.IndexLvl += 1;
+    //    //_asyncOperation = SceneManager.LoadSceneAsync(MenuManager.DataScene.IndexLvl);
+    //    //while (_asyncOperation.isDone)
+    //    //{
+    //    //    Debug.Log("Цикл");
+    //    //    LoadBar.fillAmount = _asyncOperation.progress / 0.9f;
+    //    //    Debug.Log(LoadBar.fillAmount);
+    //    //    yield return null;
+    //    //}
+    //}
 }

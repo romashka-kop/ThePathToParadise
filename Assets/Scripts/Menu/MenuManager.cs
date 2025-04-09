@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,26 +17,18 @@ public class MenuManager : MonoBehaviour
 
     public static bool IsOpenedSettings = false;
 
-    public static SaveDataSettings DataSettings = new();
-    public static SaveDataPlayer DataPlayer = new();
-    public static SaveDataScene DataScene = new();
-
-    private readonly string _urlRoma = "https://vk.com/romashkaaaa_a";
-    private readonly string _urlKirill = "https://web.telegram.org/a/#-1001617083906";
+    private const string _urlRoma = "https://vk.com/romashkaaaa_a";
+    private const string _urlKirill = "https://web.telegram.org/a/#-1001617083906";
+    private SaveDataScene _dataScene;
 
     void Awake()
     {
+        _dataScene = new("SceneData.json");
         Init();
     }
 
     private void Init()
     {
-        DataSettings = (SaveDataSettings)DataSettings.Load(DataSettings, "/SettingsData.json");
-
-        DataPlayer = (SaveDataPlayer)DataPlayer.Load(DataPlayer, "/PlayerData.json");
-
-        DataScene = (SaveDataScene)DataScene.Load(DataScene, "/SceneData.json");
-
         ContinueButton.onClick.AddListener(Continue);
         NewGameButton.onClick.AddListener(NewGame);
         SettingsButton.onClick.AddListener(Settings);
@@ -49,11 +42,11 @@ public class MenuManager : MonoBehaviour
 
     public void Continue()
     {
-        SceneManager.LoadScene(DataScene.IndexLvl);
+        SceneManager.LoadScene(_dataScene.IndexLvl);
     }
     public void NewGame()
     {
-        DataScene.IndexLvl = 1;
+        _dataScene.IndexLvl = 1;
         SceneManager.LoadScene("LoadingScene");
     }
     public void Settings()
@@ -79,7 +72,7 @@ public class MenuManager : MonoBehaviour
     private void CheckSaveGame()
     {
         ColorBlock colorBlock = ContinueButton.colors;
-        if (DataScene.IndexLvl == 0)
+        if (_dataScene.IndexLvl == 0)
         {
             ContinueButton.enabled = false;
             colorBlock.normalColor = new Color(0.5921569f, 0.5921569f, 0.5921569f, 0.5f);

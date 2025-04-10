@@ -6,6 +6,8 @@ TagManager:
   tags:
   - SpawnPlayer
   - Terrain
+  - Spawn
+  - Destroy
   layers:
   - Default
   - TransparentFX

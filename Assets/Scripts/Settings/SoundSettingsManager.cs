@@ -7,11 +7,8 @@ public class SoundSettingsManager : MonoBehaviour
 
     public static float SoundValue;
 
-    private SaveDataSettings _dataSettings;
-
     private void Awake()
     {
-        _dataSettings = new("SettingsData.json");
         if (SliderSound != null)
             SliderSound.onValueChanged.AddListener(delegate { SliderSoundChange(SliderSound); });
 
@@ -25,14 +22,13 @@ public class SoundSettingsManager : MonoBehaviour
 
     private void SaveDataSoundSettings()
     {
-        _dataSettings.MusicValue = SoundValue;
-        _dataSettings.Save(_dataSettings, "SettingsData.json");
+        SettingsTransitions.DataSettings.MusicValue = SoundValue;
+        SettingsTransitions.DataSettings.Save(SettingsTransitions.DataSettings, "SettingsData.json");
     }
 
     private void ChangeUIComponents()
     {
-        _dataSettings = _dataSettings.Load<SaveDataSettings>(_dataSettings, "SettingsData.json");
-        SoundValue = _dataSettings.MusicValue;
+        SoundValue = SettingsTransitions.DataSettings.MusicValue;
         SliderSound.value = SoundValue;
     }
 

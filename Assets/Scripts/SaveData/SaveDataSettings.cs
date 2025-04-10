@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 [System.Serializable]
 public class SaveDataSettings : AbsSaveData
 {
     #region Настройки Графики
-    public int[] graphicIndexSettings = { 2, 2, 1, 1, 2, 2 };
+    public int[] graphicIndexSettings = { 0, 2, 1, 1, 2, 2 };
     #endregion
 
     #region Настройки Управления
@@ -20,9 +17,4 @@ public class SaveDataSettings : AbsSaveData
     #region Настройки Звуков
     public float MusicValue = 50f;
     #endregion
-
-    public SaveDataSettings(string path)
-    {
-        Load<SaveDataSettings>(this, path);
-    }
 }

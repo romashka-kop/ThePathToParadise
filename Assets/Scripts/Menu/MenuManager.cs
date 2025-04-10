@@ -46,8 +46,8 @@ public class MenuManager : MonoBehaviour
     }
     public void NewGame()
     {
-        _dataScene.IndexLvl = 1;
-        SceneManager.LoadScene("LoadingScene");
+        _dataScene.IndexLvl = 2;
+        LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
     }
     public void Settings()
     {

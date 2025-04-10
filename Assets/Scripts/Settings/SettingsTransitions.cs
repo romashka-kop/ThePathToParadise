@@ -24,8 +24,11 @@ public class SettingsTransitions : MonoBehaviour
     public enum ActivPanelSettings { PanelMouseSettings, PanelKeyboardSettings, None };
     public static ActivPanelSettings activPanelSettings = ActivPanelSettings.PanelMouseSettings;
 
-    void Start()
+    public static SaveDataSettings DataSettings = new();
+
+    void Awake()
     {
+        DataSettings = DataSettings.Load<SaveDataSettings>(DataSettings, "SettingsData.json");
         Init();
     }
 
@@ -114,11 +117,6 @@ public class SettingsTransitions : MonoBehaviour
     private void OpenGraphicsSettings()
     {
         activMenuSetting = ActivMenuSetting.MenuGraphicsSettings;
-    }
-
-    private void ApplyAllSettings()
-    {
-
     }
 
     private void OpenSoundSettings()

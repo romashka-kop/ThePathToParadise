@@ -12,11 +12,8 @@ public class GraphicsSettingsManager : MonoBehaviour
 
     public static TMP_Dropdown[] Dropdowns;
 
-    private SaveDataSettings _dataSettings;
-
     private void Awake()
     {
-        _dataSettings = new("SettingsData.json");
         Init();
     }
 
@@ -59,9 +56,8 @@ public class GraphicsSettingsManager : MonoBehaviour
 
     private void LoadGraphicSave(TMP_Dropdown[] dropdowns)
     {
-        _dataSettings = _dataSettings.Load<SaveDataSettings>(_dataSettings, "SettingsData.json");
         for (int i = 0; i < dropdowns.Length; i++)
-            dropdowns[i].value = _dataSettings.graphicIndexSettings[i];
+            dropdowns[i].value = SettingsTransitions.DataSettings.graphicIndexSettings[i];
 
         ChangeGraphicQuality(GraphicQuality);
         ChangeTextureQuality(TextureQuality);
@@ -74,9 +70,9 @@ public class GraphicsSettingsManager : MonoBehaviour
     private void SaveGraphic()
     {
         for (int i = 0; i < Dropdowns.Length; i++)
-            _dataSettings.graphicIndexSettings[i] = Dropdowns[i].value;
+            SettingsTransitions.DataSettings.graphicIndexSettings[i] = Dropdowns[i].value;
 
-        _dataSettings.Save(_dataSettings, "SettingsData.json");
+        SettingsTransitions.DataSettings.Save(SettingsTransitions.DataSettings, "SettingsData.json");
     }
 
     private void ChangeGraphicQuality(TMP_Dropdown dropdown)

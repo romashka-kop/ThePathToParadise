@@ -1,32 +1,52 @@
-using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LoadingManager : MonoBehaviour
 {
-    public Image LoadBar;
+    public TextMeshProUGUI LoadingText;
+    public Image ProgressImage;
 
-    private AsyncOperation _asyncOperation;
+    private static LoadingManager instance;
 
-    //void Start()
-    //{
-    //    StartCoroutine(Loading());
-    //}
+    private Animator _animator;
 
-    //private IEnumerator Loading()
-    //{
-    //    //Debug.Log("Загрузка сцены");
-    //    //yield return new WaitForSeconds(1);
+    private AsyncOperation _operation;
 
-    //    //MenuManager.DataScene.IndexLvl += 1;
-    //    //_asyncOperation = SceneManager.LoadSceneAsync(MenuManager.DataScene.IndexLvl);
-    //    //while (_asyncOperation.isDone)
-    //    //{
-    //    //    Debug.Log("Цикл");
-    //    //    LoadBar.fillAmount = _asyncOperation.progress / 0.9f;
-    //    //    Debug.Log(LoadBar.fillAmount);
-    //    //    yield return null;
-    //    //}
-    //}
+    private static bool isPlayCloasingAnim = false;
+
+    private void Awake()
+    {
+        instance = this;
+        _animator = GetComponent<Animator>();
+
+        if (isPlayCloasingAnim)
+        {
+            instance._animator.SetTrigger("sceneEnd");
+        }
+    }
+
+    private void Update()
+    {
+        if (_operation != null)
+        {
+            LoadingText.text = Mathf.RoundToInt(instance._operation.progress * 100) + "%";
+            ProgressImage.fillAmount = instance._operation.progress;
+        }
+    }
+
+    public static void SwitchSceneLoading(int idScene)
+    {
+        instance._animator.SetTrigger("sceneStart");
+
+        instance._operation = SceneManager.LoadSceneAsync(idScene);
+        instance._operation.allowSceneActivation = false;
+    }
+
+    public void OnAnimationOver()
+    {
+        isPlayCloasingAnim = true;
+        instance._operation.allowSceneActivation = true;
+    }
 }

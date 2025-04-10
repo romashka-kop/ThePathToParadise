@@ -8,12 +8,12 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private float _forceJump;
 
     private Rigidbody _gameObj;
-    private SaveDataSettings _dataSettings;
+    private SaveDataSettings _dataSettings = new();
 
 
     private void Awake()
     {
-       _dataSettings = new("SettingsData.json");
+        _dataSettings = _dataSettings.Load<SaveDataSettings>(_dataSettings, "SettingsData.json");
         _gameObj = GetComponent<Rigidbody>();
     }
 

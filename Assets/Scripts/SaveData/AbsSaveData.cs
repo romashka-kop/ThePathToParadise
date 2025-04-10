@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
-using System;
+using UnityEngine;
 
 public abstract class AbsSaveData
 {
@@ -16,14 +13,11 @@ public abstract class AbsSaveData
     {
         if (File.Exists(Application.persistentDataPath + path))
         {
-            //Debug.Log(Application.persistentDataPath + "" + path);
-            string json = File.ReadAllText(Application.persistentDataPath + "" + path);
+            string json = File.ReadAllText(Application.persistentDataPath + path);
             return JsonUtility.FromJson<ResData>(json);
-            //return null;
         }
         else
         {
-            data.GetType();
             Save(data, path);
             return Load<ResData>(data, path);
         }

@@ -53,6 +53,8 @@ public class MenuManager : MonoBehaviour
     {
         IsOpenedSettings = !IsOpenedSettings;
         CanvasSettings.SetActive(IsOpenedSettings);
+        Animator anim = CanvasSettings.GetComponent<Animator>();
+        anim.SetTrigger("OpenSettingsTrigger");
     }
     public void ExitGame()
     {

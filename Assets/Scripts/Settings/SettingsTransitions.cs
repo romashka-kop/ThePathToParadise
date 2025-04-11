@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +26,8 @@ public class SettingsTransitions : MonoBehaviour
     public static ActivPanelSettings activPanelSettings = ActivPanelSettings.PanelMouseSettings;
 
     public static SaveDataSettings DataSettings = new();
+
+    private Animator _animator;
 
     void Awake()
     {
@@ -67,13 +70,21 @@ public class SettingsTransitions : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            gameObject.SetActive(false);
+            _animator.SetTrigger("CloseSettingsTrigger");
+            CloseSeetings();
             MenuManager.IsOpenedSettings = false;
         }
     }
 
+    private async void CloseSeetings()
+    {
+        await Task.Delay(1000);
+        gameObject.SetActive(false);
+    }
+
     private void Init()
     {
+        _animator = GetComponent<Animator>();
         ButtonControll.onClick.AddListener(OpenControllSettings);
         ButtonGraphics.onClick.AddListener(OpenGraphicsSettings);
         ButtonSound.onClick.AddListener(OpenSoundSettings);

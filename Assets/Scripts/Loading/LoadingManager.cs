@@ -22,9 +22,7 @@ public class LoadingManager : MonoBehaviour
         _animator = GetComponent<Animator>();
 
         if (isPlayCloasingAnim)
-        {
             instance._animator.SetTrigger("sceneEnd");
-        }
     }
 
     private void Update()

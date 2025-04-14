@@ -24,7 +24,7 @@ public class GraphicsSettingsManager : MonoBehaviour
 
     private void Init()
     {
-        Dropdowns = new TMP_Dropdown[] { GraphicQuality, TextureQuality, Shadows, ShadowsQuality, Smoothing, AnisotropicFiltration };
+        //Dropdowns = new TMP_Dropdown[] { Screen,FPS,GraphicQuality, TextureQuality, Shadows, ShadowsQuality, Smoothing, AnisotropicFiltration };
         LoadGraphicSave(Dropdowns);
 
         GraphicQuality.enabled = false;

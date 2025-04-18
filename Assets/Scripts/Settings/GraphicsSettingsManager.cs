@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GraphicsSettingsManager : MonoBehaviour
 {
+    public TMP_Dropdown ScreenResolution;
+    public TMP_Dropdown FPS;
     public TMP_Dropdown GraphicQuality;
     public TMP_Dropdown TextureQuality;
     public TMP_Dropdown Shadows;
@@ -24,16 +26,14 @@ public class GraphicsSettingsManager : MonoBehaviour
 
     private void Init()
     {
-        //Dropdowns = new TMP_Dropdown[] { Screen,FPS,GraphicQuality, TextureQuality, Shadows, ShadowsQuality, Smoothing, AnisotropicFiltration };
+        Dropdowns = new TMP_Dropdown[] {ScreenResolution, FPS, GraphicQuality, TextureQuality, Shadows, ShadowsQuality, Smoothing, AnisotropicFiltration };
         LoadGraphicSave(Dropdowns);
 
-        GraphicQuality.enabled = false;
-        TextureQuality.enabled = false;
-        Shadows.enabled = false;
-        ShadowsQuality.enabled = false;
-        Smoothing.enabled = false;
-        AnisotropicFiltration.enabled = false;
+        if (FPS != null)
+            FPS.onValueChanged.AddListener(delegate { ChangeFPSLimit(FPS); });
 
+        if (ScreenResolution != null)
+            ScreenResolution.onValueChanged.AddListener(delegate { ChangeScreenResolution(ScreenResolution); });
 
         if (GraphicQuality != null)
             GraphicQuality.onValueChanged.AddListener(delegate { ChangeGraphicQuality(GraphicQuality); });
@@ -59,6 +59,8 @@ public class GraphicsSettingsManager : MonoBehaviour
         for (int i = 0; i < dropdowns.Length; i++)
             dropdowns[i].value = SettingsTransitions.DataSettings.graphicIndexSettings[i];
 
+        ChangeScreenResolution(ScreenResolution);
+        ChangeFPSLimit(FPS);
         ChangeGraphicQuality(GraphicQuality);
         ChangeTextureQuality(TextureQuality);
         ChangeShadows(Shadows);
@@ -73,6 +75,41 @@ public class GraphicsSettingsManager : MonoBehaviour
             SettingsTransitions.DataSettings.graphicIndexSettings[i] = Dropdowns[i].value;
 
         SettingsTransitions.DataSettings.Save(SettingsTransitions.DataSettings, "SettingsData.json");
+    }
+
+    private void ChangeScreenResolution(TMP_Dropdown dropdown)
+    {
+        switch (dropdown.value)
+        {
+            case 0:
+                Screen.SetResolution(1920, 1080, true);
+                break;
+            case 1:
+                Screen.SetResolution(2560, 1440, true);
+                break;
+        }
+    }
+
+    private void ChangeFPSLimit(TMP_Dropdown dropdown)
+    {
+        switch (dropdown.value)
+        {
+            case 0:
+                Application.targetFrameRate = 30;
+                break;
+            case 1:
+                Application.targetFrameRate = 60;
+                break;
+            case 2:
+                Application.targetFrameRate = 75;
+                break;
+            case 3:
+                Application.targetFrameRate = 120;
+                break;
+            case 4:
+                Application.targetFrameRate = -1;
+                break;
+        }
     }
 
     private void ChangeGraphicQuality(TMP_Dropdown dropdown)

@@ -4,7 +4,7 @@ using UnityEngine;
 public class SaveDataSettings : AbsSaveData
 {
     #region Настройки Графики
-    public int[] graphicIndexSettings = { 0, 0, 0, 2, 1, 1, 2, 2 };
+    public int[] graphicIndexSettings = { 0, 1, 0, 2, 1, 1, 2, 2 };
     #endregion
 
     #region Настройки Управления

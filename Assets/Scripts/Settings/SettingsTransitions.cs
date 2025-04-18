@@ -21,9 +21,9 @@ public class SettingsTransitions : MonoBehaviour
     public GameObject PanelSoundSettings;
 
     public enum ActivMenuSetting { MenuControllSettings, MenuGraphicsSettings, MenuSoundSettings, None };
-    public static ActivMenuSetting activMenuSetting = ActivMenuSetting.MenuControllSettings;
+    public ActivMenuSetting activMenuSetting = ActivMenuSetting.MenuControllSettings;
     public enum ActivPanelSettings { PanelMouseSettings, PanelKeyboardSettings, None };
-    public static ActivPanelSettings activPanelSettings = ActivPanelSettings.PanelMouseSettings;
+    public ActivPanelSettings activPanelSettings = ActivPanelSettings.PanelMouseSettings;
 
     public static SaveDataSettings DataSettings = new();
 

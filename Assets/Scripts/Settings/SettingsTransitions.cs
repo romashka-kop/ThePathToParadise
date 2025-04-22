@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,16 +21,16 @@ public class SettingsTransitions : MonoBehaviour
     public GameObject PanelGraphicsSettings;
     public GameObject PanelSoundSettings;
 
-    public enum ActivMenuSetting { MenuControllSettings, MenuGraphicsSettings, MenuSoundSettings, None };
-    public ActivMenuSetting activMenuSetting = ActivMenuSetting.MenuControllSettings;
-    public enum ActivPanelSettings { PanelMouseSettings, PanelKeyboardSettings, None };
-    public ActivPanelSettings activPanelSettings = ActivPanelSettings.PanelMouseSettings;
+    private enum ActivMenuSetting { MenuControllSettings, MenuGraphicsSettings, MenuSoundSettings, None };
+    private ActivMenuSetting _activMenuSetting = ActivMenuSetting.MenuControllSettings;
+    private enum ActivPanelSettings { PanelMouseSettings, PanelKeyboardSettings, None };
+    private ActivPanelSettings _activPanelSettings = ActivPanelSettings.PanelMouseSettings;
 
     public static SaveDataSettings DataSettings = new();
 
     private Animator _animator;
 
-    void Awake()
+    void Start()
     {
         DataSettings = DataSettings.Load<SaveDataSettings>(DataSettings, "SettingsData.json");
         Init();
@@ -37,7 +38,7 @@ public class SettingsTransitions : MonoBehaviour
 
     private void Update()
     {
-        switch (activMenuSetting)
+        switch (_activMenuSetting)
         {
             case ActivMenuSetting.None:
                 break;
@@ -54,7 +55,7 @@ public class SettingsTransitions : MonoBehaviour
 
         if (MenuControllSettings.activeSelf)
         {
-            switch (activPanelSettings)
+            switch (_activPanelSettings)
             {
                 case ActivPanelSettings.None:
                     break;
@@ -65,11 +66,12 @@ public class SettingsTransitions : MonoBehaviour
                     SwitchPanelSettings(ButtonKeyboardSettings, PanelKeyboardSettings);
                     break;
             }
-            activPanelSettings = ActivPanelSettings.None;
+            _activPanelSettings = ActivPanelSettings.None;
         }
 
         if (Input.GetKeyUp(KeyCode.Escape))
         {
+            DataSettings.Save(DataSettings, "SettingsData.json");
             _animator.SetTrigger("CloseSettingsTrigger");
             CloseSeetings();
             MenuManager.IsOpenedSettings = false;
@@ -105,7 +107,7 @@ public class SettingsTransitions : MonoBehaviour
         foreach (GameObject gm in menu)
             gm.SetActive(activPanel == gm);
 
-        activMenuSetting = ActivMenuSetting.None;
+        _activMenuSetting = ActivMenuSetting.None;
     }
 
     private void SwitchPanelSettings(Button activButton, GameObject activPanel)
@@ -122,26 +124,26 @@ public class SettingsTransitions : MonoBehaviour
 
     private void OpenControllSettings()
     {
-        activMenuSetting = ActivMenuSetting.MenuControllSettings;
+        _activMenuSetting = ActivMenuSetting.MenuControllSettings;
     }
 
     private void OpenGraphicsSettings()
     {
-        activMenuSetting = ActivMenuSetting.MenuGraphicsSettings;
+        _activMenuSetting = ActivMenuSetting.MenuGraphicsSettings;
     }
 
     private void OpenSoundSettings()
     {
-        activMenuSetting = ActivMenuSetting.MenuSoundSettings;
+        _activMenuSetting = ActivMenuSetting.MenuSoundSettings;
     }
 
     private void OpenMouseSettings()
     {
-        activPanelSettings = ActivPanelSettings.PanelMouseSettings;
+        _activPanelSettings = ActivPanelSettings.PanelMouseSettings;
     }
 
     private void OpenKeyboardSettings()
     {
-        activPanelSettings = ActivPanelSettings.PanelKeyboardSettings;
+        _activPanelSettings = ActivPanelSettings.PanelKeyboardSettings;
     }
 }

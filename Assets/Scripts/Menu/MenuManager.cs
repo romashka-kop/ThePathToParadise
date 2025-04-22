@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -19,11 +17,11 @@ public class MenuManager : MonoBehaviour
 
     private const string _urlRoma = "https://vk.com/romashkaaaa_a";
     private const string _urlKirill = "https://web.telegram.org/a/#-1001617083906";
-    private SaveDataScene _dataScene;
+    private SaveDataScene _dataScene = new();
 
     void Awake()
     {
-        _dataScene = new("SceneData.json");
+        _dataScene = _dataScene.Load<SaveDataScene>(_dataScene, "SceneData.json");
         Init();
     }
 
@@ -42,7 +40,7 @@ public class MenuManager : MonoBehaviour
 
     public void Continue()
     {
-        SceneManager.LoadScene(_dataScene.IndexLvl);
+        LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
     }
     public void NewGame()
     {

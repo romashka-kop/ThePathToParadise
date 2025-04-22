@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,7 +16,7 @@ public class ControllSettingsManager : MonoBehaviour
 
     public static SettingsInputButton[] UserButtons;
 
-    private void Awake()
+    private void Start()
     {
         Init();
     }
@@ -52,7 +53,6 @@ public class ControllSettingsManager : MonoBehaviour
         }
         SettingsTransitions.DataSettings.Sensivity = Sensitivity;
         SettingsTransitions.DataSettings.IsOnVSync = IsOnVSync;
-        SettingsTransitions.DataSettings.Save(SettingsTransitions.DataSettings, "SettingsData.json");
     }
 
     private void ChangeUIComponents()

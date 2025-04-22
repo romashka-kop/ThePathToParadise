@@ -14,7 +14,7 @@ public class GraphicsSettingsManager : MonoBehaviour
 
     public static TMP_Dropdown[] Dropdowns;
 
-    private void Awake()
+    private void Start()
     {
         Init();
     }
@@ -73,8 +73,6 @@ public class GraphicsSettingsManager : MonoBehaviour
     {
         for (int i = 0; i < Dropdowns.Length; i++)
             SettingsTransitions.DataSettings.graphicIndexSettings[i] = Dropdowns[i].value;
-
-        SettingsTransitions.DataSettings.Save(SettingsTransitions.DataSettings, "SettingsData.json");
     }
 
     private void ChangeScreenResolution(TMP_Dropdown dropdown)

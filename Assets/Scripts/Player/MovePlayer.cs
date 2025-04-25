@@ -2,37 +2,26 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-    public static bool IsGrounded;
-
-    [SerializeField] private float _speedPlayer = 1000f;
+    [SerializeField] private float _speedPlayer = 5f;
     [SerializeField] private float _forceJump;
 
-    private Rigidbody _gameObj;
     private SaveDataSettings _dataSettings = new();
+    private CharacterController _characterController;
 
-
-    private void Awake()
+    private void Start()
     {
         _dataSettings = _dataSettings.Load<SaveDataSettings>(_dataSettings, "SettingsData.json");
-        _gameObj = GetComponent<Rigidbody>();
+        _characterController = GetComponent<CharacterController>();
     }
 
     void FixedUpdate()
     {
-        RotatePlayer();
         MovePlayerPosition();
-        JumpPlayer();
-    }
-
-    private void RotatePlayer()
-    {
-        float mouseX = Input.GetAxis("Mouse X") * _dataSettings.Sensivity * Time.deltaTime;
-        _gameObj.angularVelocity = new Vector3(0, mouseX, 0);
     }
 
     private void MovePlayerPosition()
     {
-        #region ����������� ������� ������
+        #region Клавиши управления
         //Forward = MenuManager.DataSettings.PlayerControlKeyCode[0]
         //Backward = MenuManager.DataSettings.PlayerControlKeyCode[1]
         //Left = MenuManager.DataSettings.PlayerControlKeyCode[2]
@@ -44,37 +33,25 @@ public class MovePlayer : MonoBehaviour
         Vector3 movement = Vector3.zero;
 
         if (Input.GetKey(_dataSettings.PlayerControlKeyCode[0]))
+        {
             movement += transform.forward;
+        }
 
         if (Input.GetKey(_dataSettings.PlayerControlKeyCode[1]))
+        {
             movement -= transform.forward;
+        }
 
         if (Input.GetKey(_dataSettings.PlayerControlKeyCode[2]))
+        {
             movement -= transform.right;
+        }
 
         if (Input.GetKey(_dataSettings.PlayerControlKeyCode[3]))
+        {
             movement += transform.right;
+        }
 
-        movement *= _speedPlayer * Time.deltaTime;
-
-        _gameObj.linearVelocity = movement;
-    }
-
-    private void JumpPlayer()
-    {
-        if (IsGrounded && Input.GetKey(_dataSettings.PlayerControlKeyCode[4]))
-            _gameObj.linearVelocity = new Vector3(_gameObj.linearVelocity.x, _gameObj.linearVelocity.y+1 * _forceJump);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.collider.tag == "Terrain")
-            IsGrounded = true;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.tag == "Terrain")
-            IsGrounded = false;
+        _characterController.Move(movement * _speedPlayer * Time.deltaTime);
     }
 }

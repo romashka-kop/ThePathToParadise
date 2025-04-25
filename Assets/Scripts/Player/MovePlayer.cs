@@ -32,7 +32,7 @@ public class MovePlayer : MonoBehaviour
 
     private void MovePlayerPosition()
     {
-        #region Расшифровка массива кнопок
+        #region пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         //Forward = MenuManager.DataSettings.PlayerControlKeyCode[0]
         //Backward = MenuManager.DataSettings.PlayerControlKeyCode[1]
         //Left = MenuManager.DataSettings.PlayerControlKeyCode[2]
@@ -57,13 +57,13 @@ public class MovePlayer : MonoBehaviour
 
         movement *= _speedPlayer * Time.deltaTime;
 
-        _gameObj.velocity = movement;
+        _gameObj.linearVelocity = movement;
     }
 
     private void JumpPlayer()
     {
         if (IsGrounded && Input.GetKey(_dataSettings.PlayerControlKeyCode[4]))
-            _gameObj.velocity = new Vector3(_gameObj.velocity.x, _gameObj.velocity.y+1 * _forceJump);
+            _gameObj.linearVelocity = new Vector3(_gameObj.linearVelocity.x, _gameObj.linearVelocity.y+1 * _forceJump);
     }
 
     private void OnCollisionEnter(Collision collision)

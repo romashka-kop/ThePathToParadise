@@ -4,9 +4,12 @@ public class MovePlayer : MonoBehaviour
 {
     [SerializeField] private float _speedPlayer = 5f;
     [SerializeField] private float _forceJump;
+    [SerializeField] private float _gravity;
+    [SerializeField] private float _jumpForce;
 
     private SaveDataSettings _dataSettings = new();
     private CharacterController _characterController;
+    private Vector3 _velocity;
 
     private void Start()
     {
@@ -17,6 +20,8 @@ public class MovePlayer : MonoBehaviour
     void FixedUpdate()
     {
         MovePlayerPosition();
+        Gravity(_characterController.isGrounded);
+        Jump(_characterController.isGrounded);
     }
 
     private void MovePlayerPosition()
@@ -53,5 +58,21 @@ public class MovePlayer : MonoBehaviour
         }
 
         _characterController.Move(movement * _speedPlayer * Time.deltaTime);
+    }
+
+    private void Gravity(bool isGrounded)
+    {
+        if (isGrounded && _velocity.y < 0)
+            _velocity.y = -1f;
+        _velocity.y -= _gravity * Time.fixedDeltaTime;
+        _characterController.Move(_velocity * Time.fixedDeltaTime);
+    }
+
+    private void Jump(bool isGrounded)
+    {
+        if (isGrounded && Input.GetKey(_dataSettings.PlayerControlKeyCode[4]))
+        {
+            _velocity.y *= _jumpForce;
+        }
     }
 }

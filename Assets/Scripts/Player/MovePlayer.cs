@@ -7,13 +7,13 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private float _gravity;
     [SerializeField] private float _jumpForce;
 
-    private SaveDataSettings _dataSettings = new();
+    public static SaveDataSettings DataSettings = new();
     private CharacterController _characterController;
     private Vector3 _velocity;
 
     private void Start()
     {
-        _dataSettings = _dataSettings.Load<SaveDataSettings>(_dataSettings, "SettingsData.json");
+        DataSettings = DataSettings.Load<SaveDataSettings>(DataSettings, "SettingsData.json");
         _characterController = GetComponent<CharacterController>();
     }
 
@@ -32,27 +32,29 @@ public class MovePlayer : MonoBehaviour
         //Left = MenuManager.DataSettings.PlayerControlKeyCode[2]
         //Right = MenuManager.DataSettings.PlayerControlKeyCode[3]
         //Jump = MenuManager.DataSettings.PlayerControlKeyCode[4]
-        //Squat = MenuManager.DataSettings.PlayerControlKeyCode[5]
+        //Take = MenuManager.DataSettings.PlayerControlKeyCode[5]
+        //Drop = MenuManager.DataSettings.PlayerControlKeyCode[6]
+        //ForceDrop = MenuManager.DataSettings.PlayerControlKeyCode[7]
         #endregion
 
         Vector3 movement = Vector3.zero;
 
-        if (Input.GetKey(_dataSettings.PlayerControlKeyCode[0]))
+        if (Input.GetKey(DataSettings.PlayerControlKeyCode[0]))
         {
             movement += transform.forward;
         }
 
-        if (Input.GetKey(_dataSettings.PlayerControlKeyCode[1]))
+        if (Input.GetKey(DataSettings.PlayerControlKeyCode[1]))
         {
             movement -= transform.forward;
         }
 
-        if (Input.GetKey(_dataSettings.PlayerControlKeyCode[2]))
+        if (Input.GetKey(DataSettings.PlayerControlKeyCode[2]))
         {
             movement -= transform.right;
         }
 
-        if (Input.GetKey(_dataSettings.PlayerControlKeyCode[3]))
+        if (Input.GetKey(DataSettings.PlayerControlKeyCode[3]))
         {
             movement += transform.right;
         }
@@ -70,9 +72,9 @@ public class MovePlayer : MonoBehaviour
 
     private void Jump(bool isGrounded)
     {
-        if (isGrounded && Input.GetKey(_dataSettings.PlayerControlKeyCode[4]))
+        if (isGrounded && Input.GetKey(DataSettings.PlayerControlKeyCode[4]))
         {
-            _velocity.y *= _jumpForce;
+            _velocity.y = _jumpForce;
         }
     }
 }

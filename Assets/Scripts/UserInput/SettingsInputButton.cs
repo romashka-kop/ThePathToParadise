@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SettingsInputButton : MonoBehaviour
 {
-    public enum MoveDirection {Forward, Back, Left, Right, Jump, Squat };
+    public enum MoveDirection {Forward, Back, Left, Right, Jump, Take, Drop, ForceDrop };
 
     public MoveDirection direction;
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,6 +37,7 @@ public class PauseTransitions : MonoBehaviour
     {
         _animatorPause.SetTrigger("ClosePause");
         ClosePausePanel();
+        ChangePauseMode(CursorLockMode.Locked ,false, 1);
     }
 
     private void OpenSettings()
@@ -49,12 +48,22 @@ public class PauseTransitions : MonoBehaviour
 
     private void ExitMenu()
     {
+        ChangePauseMode(CursorLockMode.None,true, 1);
         LoadingManager.SwitchSceneLoading(0);
+        MenuManager.IsMenu = false;
     }
 
     private async void ClosePausePanel()
     {
         await Task.Delay(1000);
         gameObject.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public static void ChangePauseMode(CursorLockMode lockMode ,bool visable, float timeScale)
+    {
+        Cursor.lockState = lockMode;
+        Cursor.visible = visable;
+        Time.timeScale = timeScale;
     }
 }

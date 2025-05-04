@@ -8,7 +8,7 @@ public class RotatePlayer : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        PauseTransitions.ChangePauseMode(CursorLockMode.Locked, false, 1);
     }
 
     void FixedUpdate()
@@ -22,7 +22,7 @@ public class RotatePlayer : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * _saveDataSettings.Sensivity * Time.fixedDeltaTime;
         _xRotation -= mouseY;
         _xRotation = Mathf.Clamp(_xRotation, -90, 90);
-        transform.rotation = Quaternion.Euler(_xRotation, 0, 0);
+        transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
         _character.Rotate(Vector3.up * mouseX);
     }
 }

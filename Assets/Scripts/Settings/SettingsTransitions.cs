@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,7 +31,17 @@ public class SettingsTransitions : MonoBehaviour
 
     void Start()
     {
-        DataSettings = DataSettings.Load<SaveDataSettings>(DataSettings, "SettingsData.json");
+        if (MenuManager.IsMenu)
+        {
+            DataSettings = DataSettings.Load<SaveDataSettings>(DataSettings, "SettingsData.json");
+            Debug.Log("Меню");
+        }
+        else
+        {
+            DataSettings = MovePlayer.DataSettings;
+            Debug.Log("Игра");
+        }
+
         Init();
     }
 

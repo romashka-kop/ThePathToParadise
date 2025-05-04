@@ -13,6 +13,8 @@ public class MenuManager : MonoBehaviour
     public Button ToKirill;
     public Button ToRoma;
 
+    public static bool IsMenu = true;
+
     public static bool IsOpenedSettings = false;
 
     private const string _urlRoma = "https://vk.com/romashkaaaa_a";
@@ -41,11 +43,13 @@ public class MenuManager : MonoBehaviour
     public void Continue()
     {
         LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
+        IsMenu = false;
     }
     public void NewGame()
     {
-        _dataScene.IndexLvl = 2;
+        _dataScene.IndexLvl = 1;
         LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
+        IsMenu = false;
     }
     public void Settings()
     {

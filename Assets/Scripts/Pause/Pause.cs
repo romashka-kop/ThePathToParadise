@@ -15,6 +15,7 @@ public class Pause : MonoBehaviour
             PausePanel.SetActive(true);
             _animatorPause = PausePanel.GetComponent<Animator>();
             _animatorPause.SetTrigger("OpenPause");
+            PauseTransitions.ChangePauseMode(CursorLockMode.None, true, 0);
         }
     }
 }

@@ -16,7 +16,7 @@ public class LoadingManager : MonoBehaviour
 
     private static bool isPlayCloasingAnim = false;
 
-    private void Awake()
+    private void Start()
     {
         instance = this;
         _animator = GetComponent<Animator>();

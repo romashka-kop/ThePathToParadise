@@ -160,8 +160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speedPlayer: 5
   _forceJump: 4
-  _gravity: 4
-  _jumpForce: 2.5
+  _gravity: 8
+  _jumpForce: 4
 --- !u!1 &3646689030858818823
 GameObject:
   m_ObjectHideFlags: 0

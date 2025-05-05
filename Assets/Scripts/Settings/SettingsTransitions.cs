@@ -31,16 +31,7 @@ public class SettingsTransitions : MonoBehaviour
 
     void Start()
     {
-        if (MenuManager.IsMenu)
-        {
-            DataSettings = DataSettings.Load<SaveDataSettings>(DataSettings, "SettingsData.json");
-            Debug.Log("Меню");
-        }
-        else
-        {
-            DataSettings = MovePlayer.DataSettings;
-            Debug.Log("Игра");
-        }
+        DataSettings = DataSettings.Load<SaveDataSettings>(DataSettings, "SettingsData.json");
 
         Init();
     }
@@ -80,17 +71,13 @@ public class SettingsTransitions : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Escape))
         {
+            SetPanelSettingsDefaultPosition(PanelKeyboardSettings);
+            SetPanelSettingsDefaultPosition(PanelGraphicsSettings);
             DataSettings.Save(DataSettings, "SettingsData.json");
             _animator.SetTrigger("CloseSettingsTrigger");
             CloseSeetings();
             MenuManager.IsOpenedSettings = false;
         }
-    }
-
-    private async void CloseSeetings()
-    {
-        await Task.Delay(1000);
-        gameObject.SetActive(false);
     }
 
     private void Init()
@@ -101,6 +88,19 @@ public class SettingsTransitions : MonoBehaviour
         ButtonSound.onClick.AddListener(OpenSoundSettings);
         ButtonMouseSettings.onClick.AddListener(OpenMouseSettings);
         ButtonKeyboardSettings.onClick.AddListener(OpenKeyboardSettings);
+    }
+
+    private void SetPanelSettingsDefaultPosition(GameObject panel)
+    {
+        LimitScrollRect limit = panel.GetComponent<LimitScrollRect>();
+        Vector3 panelTransform = panel.transform.localPosition;
+        panel.transform.localPosition = new Vector3(panelTransform.x, limit.LimitScrollPositionBottomY, panelTransform.z);
+    }
+
+    private async void CloseSeetings()
+    {
+        await Task.Delay(1000);
+        gameObject.SetActive(false);
     }
 
     private void SwitchMenuSettings(GameObject activPanel, Button activButton)

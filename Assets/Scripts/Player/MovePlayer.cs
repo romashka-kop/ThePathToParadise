@@ -7,13 +7,11 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private float _gravity;
     [SerializeField] private float _jumpForce;
 
-    public static SaveDataSettings DataSettings = new();
     private CharacterController _characterController;
     private Vector3 _velocity;
 
     private void Start()
     {
-        DataSettings = DataSettings.Load<SaveDataSettings>(DataSettings, "SettingsData.json");
         _characterController = GetComponent<CharacterController>();
     }
 
@@ -22,6 +20,7 @@ public class MovePlayer : MonoBehaviour
         MovePlayerPosition();
         Gravity(_characterController.isGrounded);
         Jump(_characterController.isGrounded);
+        Squat(Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[5]));
     }
 
     private void MovePlayerPosition()
@@ -39,22 +38,22 @@ public class MovePlayer : MonoBehaviour
 
         Vector3 movement = Vector3.zero;
 
-        if (Input.GetKey(DataSettings.PlayerControlKeyCode[0]))
+        if (Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[0]))
         {
             movement += transform.forward;
         }
 
-        if (Input.GetKey(DataSettings.PlayerControlKeyCode[1]))
+        if (Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[1]))
         {
             movement -= transform.forward;
         }
 
-        if (Input.GetKey(DataSettings.PlayerControlKeyCode[2]))
+        if (Input.GetKey( SettingsTransitions.DataSettings.PlayerControlKeyCode[2]))
         {
             movement -= transform.right;
         }
 
-        if (Input.GetKey(DataSettings.PlayerControlKeyCode[3]))
+        if (Input.GetKey( SettingsTransitions.DataSettings.PlayerControlKeyCode[3]))
         {
             movement += transform.right;
         }
@@ -72,9 +71,14 @@ public class MovePlayer : MonoBehaviour
 
     private void Jump(bool isGrounded)
     {
-        if (isGrounded && Input.GetKey(DataSettings.PlayerControlKeyCode[4]))
+        if (isGrounded && Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[4]))
         {
             _velocity.y = _jumpForce;
         }
+    }
+
+    private void Squat(bool canSquat)
+    {
+        _characterController.height = canSquat ? 1f : 2f;
     }
 }

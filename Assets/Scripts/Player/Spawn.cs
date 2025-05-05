@@ -7,12 +7,7 @@ public class Spawn : MonoBehaviour
 
     private void Start()
     {
-        SpawnPlayer();
-    }
-
-    private void SpawnPlayer()
-    {
-        Instantiate(PrefabPlayer,gameObject.transform.position, Quaternion.identity);
+        Instantiate(PrefabPlayer, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

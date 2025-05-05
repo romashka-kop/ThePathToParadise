@@ -7,7 +7,7 @@ public class LiftNDrop : MonoBehaviour
 
     private bool _isLift = false;
 
-    [SerializeField] private RawImage _imageCrosshair;
+    private RawImage _imageCrosshair;
 
     [SerializeField] private Texture _crosshairDefaultIcon;
     [SerializeField] private Texture _crosshairTakeIcon;
@@ -26,6 +26,11 @@ public class LiftNDrop : MonoBehaviour
 
     private GameObject _liftedObject;
 
+    private void Start()
+    {
+        _imageCrosshair = GameObject.Find("RawImage").GetComponent<RawImage>();
+    }
+
     void Update()
     {
         _imageCrosshair.texture = _crosshairDefaultIcon;
@@ -37,19 +42,19 @@ public class LiftNDrop : MonoBehaviour
             {
                 _imageCrosshair.texture = _crosshairTakeIcon;
 
-                if (Input.GetKey(MovePlayer.DataSettings.PlayerControlKeyCode[5]))
+                if (Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[6]))
                     PrepareForLift(hit);
             }
         }
 
         if (_liftedObject != null)
         {
-            if (Input.GetKeyDown(MovePlayer.DataSettings.PlayerControlKeyCode[6]))
+            if (Input.GetKeyDown( SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
             {
                 _isLift = false;
                 Drop();
             }
-            if (Input.GetKeyDown(MovePlayer.DataSettings.PlayerControlKeyCode[7]))
+            if (Input.GetKeyDown( SettingsTransitions.DataSettings.PlayerControlKeyCode[8]))
             {
                 DropWithForce();
             }

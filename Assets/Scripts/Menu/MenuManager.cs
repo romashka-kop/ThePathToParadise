@@ -13,22 +13,21 @@ public class MenuManager : MonoBehaviour
     public Button ToKirill;
     public Button ToRoma;
 
-    public static bool IsMenu = true;
-
     public static bool IsOpenedSettings = false;
 
     private const string _urlRoma = "https://vk.com/romashkaaaa_a";
     private const string _urlKirill = "https://web.telegram.org/a/#-1001617083906";
     private SaveDataScene _dataScene = new();
 
-    void Awake()
+    void Start()
     {
-        _dataScene = _dataScene.Load<SaveDataScene>(_dataScene, "SceneData.json");
         Init();
     }
 
     private void Init()
     {
+        _dataScene = _dataScene.Load<SaveDataScene>(_dataScene, "SceneData.json");
+        SettingsTransitions.DataSettings = SettingsTransitions.DataSettings.Load<SaveDataSettings>(SettingsTransitions.DataSettings, "SettingsData.json");
         ContinueButton.onClick.AddListener(Continue);
         NewGameButton.onClick.AddListener(NewGame);
         SettingsButton.onClick.AddListener(Settings);
@@ -43,13 +42,11 @@ public class MenuManager : MonoBehaviour
     public void Continue()
     {
         LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
-        IsMenu = false;
     }
     public void NewGame()
     {
         _dataScene.IndexLvl = 1;
         LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
-        IsMenu = false;
     }
     public void Settings()
     {

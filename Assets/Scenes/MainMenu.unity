@@ -519,6 +519,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5923956317772760821, guid: 49d3d4ebcdaf31649a937727c6e929f3, type: 3}
+      propertyPath: m_Padding.w
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923956317772760821, guid: 49d3d4ebcdaf31649a937727c6e929f3, type: 3}
+      propertyPath: m_Padding.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6336247676677466938, guid: 49d3d4ebcdaf31649a937727c6e929f3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

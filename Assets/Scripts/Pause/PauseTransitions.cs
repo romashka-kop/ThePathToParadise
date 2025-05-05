@@ -48,9 +48,14 @@ public class PauseTransitions : MonoBehaviour
 
     private void ExitMenu()
     {
-        ChangePauseMode(CursorLockMode.None,true, 1);
         LoadingManager.SwitchSceneLoading(0);
-        MenuManager.IsMenu = false;
+        SetParametrsExitToMenu();
+    }
+
+    private async void SetParametrsExitToMenu()
+    {
+        await Task.Delay(1000);
+        ChangePauseMode(CursorLockMode.None, true, 1);
     }
 
     private async void ClosePausePanel()

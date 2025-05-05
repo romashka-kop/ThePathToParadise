@@ -8,7 +8,7 @@ public class MenuAnimation : MonoBehaviour
 {
     private Animator _animator;
 
-    private void Awake()
+    private void Start()
     {
         _animator = GetComponent<Animator>();
         _animator.SetTrigger("StartAnim");

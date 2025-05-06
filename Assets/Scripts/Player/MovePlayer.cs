@@ -20,6 +20,7 @@ public class MovePlayer : MonoBehaviour
         MovePlayerPosition();
         Gravity(_characterController.isGrounded);
         Jump(_characterController.isGrounded);
+        Sprint(Input.GetKey(KeyCode.LeftShift));
         Squat(Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[5]));
     }
 
@@ -80,5 +81,10 @@ public class MovePlayer : MonoBehaviour
     private void Squat(bool canSquat)
     {
         _characterController.height = canSquat ? 1f : 2f;
+    }
+
+    private void Sprint(bool isSprint)
+    {
+        _speedPlayer = isSprint ? 10 : 5;
     }
 }

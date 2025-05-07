@@ -77,11 +77,13 @@ public class MenuManager : MonoBehaviour
         {
             ContinueButton.enabled = false;
             colorBlock.normalColor = new Color(0.5921569f, 0.5921569f, 0.5921569f, 0.5f);
+            ContinueButton.GetComponent<Image>().color = new Color(0,0,0,1);
         }
         else
         {
             ContinueButton.enabled = true;
-            colorBlock.normalColor = new Color(0.5921569f, 0.5921569f, 0.5921569f, 1f);
+            colorBlock.normalColor = new Color(0.2078f, 0.2078f, 0.2078f, 1f);
+            ContinueButton.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         }
         ContinueButton.colors = colorBlock;
     }

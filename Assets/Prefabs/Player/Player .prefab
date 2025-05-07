@@ -139,7 +139,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2.04
+  m_Height: 2
   m_Radius: 0.49
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedWalk: 8
-  _speddSprint: 16
+  _speedSprint: 16
   _speedSquat: 4
   _gravity: 15
   _jumpForce: 8
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 7999125121558381403}
   - component: {fileID: 830590795755670003}
   m_Layer: 6
-  m_Name: Camera
+  m_Name: CameraPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,7 +192,7 @@ Transform:
   m_GameObject: {fileID: 3646689030858818823}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.37, z: -0.026}
+  m_LocalPosition: {x: 0, y: 0.381, z: 0.277}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _crosshairDefaultIcon: {fileID: 2800000, guid: 41d608d82c5793e4fb0e74f25299f734, type: 3}
   _crosshairTakeIcon: {fileID: 2800000, guid: db60c4ba10533ed4eb09534c9f39c608, type: 3}
-  _dropForce: 10
+  _dropForce: 20
   _speedLift: 15
   _maxDistanceRay: 4
   _point: {fileID: 5232498626230697846}

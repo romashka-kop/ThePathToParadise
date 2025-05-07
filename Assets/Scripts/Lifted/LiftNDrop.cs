@@ -15,7 +15,7 @@ public class LiftNDrop : MonoBehaviour
     [SerializeField] private float _dropForce = 10;
     [SerializeField] private float _speedLift = 15;
 
-    [SerializeField] private int _maxDistanceRay = 3;
+    [SerializeField] private int _maxDistanceRay = 5;
 
     [SerializeField] private Transform _point;
     [SerializeField] private Transform _playerCamera;

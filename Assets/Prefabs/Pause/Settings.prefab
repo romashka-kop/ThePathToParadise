@@ -2201,7 +2201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf4859f3e339b34a93e9c0a7cd66f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 5
+  direction: 6
   panelInput: {fileID: 3632859542765404149}
   key: 101
 --- !u!1 &1251990180019469208
@@ -6279,7 +6279,7 @@ GameObject:
   - component: {fileID: 6320075372150631533}
   - component: {fileID: 8485620794841435999}
   m_Layer: 5
-  m_Name: TextJump
+  m_Name: TextSquat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7406,6 +7406,7 @@ MonoBehaviour:
   - {fileID: 2495816262423042942}
   - {fileID: 323612527750381980}
   - {fileID: 7422919562833481743}
+  - {fileID: 8485620794841435999}
   - {fileID: 6457356694152045712}
   - {fileID: 1154749517052694599}
   - {fileID: 470172934457834011}
@@ -13727,7 +13728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf4859f3e339b34a93e9c0a7cd66f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 6
+  direction: 7
   panelInput: {fileID: 3632859542765404149}
   key: 323
 --- !u!1 &6035694470898375262
@@ -19950,7 +19951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf4859f3e339b34a93e9c0a7cd66f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 7
+  direction: 8
   panelInput: {fileID: 3632859542765404149}
   key: 324
 --- !u!1 &8897092906656314411

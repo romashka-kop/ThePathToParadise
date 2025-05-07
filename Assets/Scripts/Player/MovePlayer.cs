@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-    [SerializeField] private float _speedPlayer = 5f;
-    [SerializeField] private float _forceJump;
+    [SerializeField] private float _speedWalk = 5f;
+    [SerializeField] private float _speddSprint = 10f;
+    [SerializeField] private float _speedSquat = 3f;
     [SerializeField] private float _gravity;
     [SerializeField] private float _jumpForce;
 
+    private float _finalSpeed;
     private CharacterController _characterController;
     private Vector3 _velocity;
 
@@ -17,11 +19,11 @@ public class MovePlayer : MonoBehaviour
 
     void FixedUpdate()
     {
+        Sprint(Input.GetKey(KeyCode.LeftShift));
+        Squat(Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[5]));
         MovePlayerPosition();
         Gravity(_characterController.isGrounded);
         Jump(_characterController.isGrounded);
-        Sprint(Input.GetKey(KeyCode.LeftShift));
-        Squat(Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[5]));
     }
 
     private void MovePlayerPosition()
@@ -59,7 +61,8 @@ public class MovePlayer : MonoBehaviour
             movement += transform.right;
         }
 
-        _characterController.Move(movement * _speedPlayer * Time.deltaTime);
+        Debug.Log(_finalSpeed);
+        _characterController.Move(movement * _finalSpeed * Time.deltaTime);
     }
 
     private void Gravity(bool isGrounded)
@@ -81,10 +84,11 @@ public class MovePlayer : MonoBehaviour
     private void Squat(bool canSquat)
     {
         _characterController.height = canSquat ? 1f : 2f;
+        _finalSpeed = canSquat ? _speedSquat : _speedWalk;
     }
 
     private void Sprint(bool isSprint)
     {
-        _speedPlayer = isSprint ? 10 : 5;
+        _finalSpeed = isSprint ? _speddSprint : _speedWalk;
     }
 }

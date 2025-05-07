@@ -114,7 +114,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.728241, y: 1.103, z: 3.4197004}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3308753281964293321}
@@ -158,10 +158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3662805181f5b4f9d45903510c8eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedPlayer: 5
-  _forceJump: 4
-  _gravity: 8
-  _jumpForce: 4
+  _speedWalk: 8
+  _speddSprint: 16
+  _speedSquat: 4
+  _gravity: 15
+  _jumpForce: 8
 --- !u!1 &3646689030858818823
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,12 +283,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e25ce5e22bd045b5a270550a3ca72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _imageCrosshair: {fileID: 0}
   _crosshairDefaultIcon: {fileID: 2800000, guid: 41d608d82c5793e4fb0e74f25299f734, type: 3}
   _crosshairTakeIcon: {fileID: 2800000, guid: db60c4ba10533ed4eb09534c9f39c608, type: 3}
   _dropForce: 10
   _speedLift: 15
-  _maxDistanceRay: 3
+  _maxDistanceRay: 4
   _point: {fileID: 5232498626230697846}
   _playerCamera: {fileID: 3308753281964293321}
   _layerMask:
@@ -318,7 +318,7 @@ Transform:
   m_GameObject: {fileID: 7858745097920800550}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

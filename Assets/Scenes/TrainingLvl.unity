@@ -10598,11 +10598,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2609656982773461204, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.7884
+      value: -14.14
       objectReference: {fileID: 0}
     - target: {fileID: 2609656982773461204, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.6482
+      value: 17.18
       objectReference: {fileID: 0}
     - target: {fileID: 5082788282831560216, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19615,11 +19615,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5082788282831560216, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -49.18665
+      value: -49.74
       objectReference: {fileID: 0}
     - target: {fileID: 5082788282831560216, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.630799
+      value: 14.14
       objectReference: {fileID: 0}
     - target: {fileID: 5082788282831560216, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalPosition.z
@@ -86035,7 +86035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5082788282831560216, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.630799
+      value: 14.17
       objectReference: {fileID: 0}
     - target: {fileID: 5082788282831560216, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalPosition.z
@@ -93812,11 +93812,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5082788282831560216, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.630799
+      value: 14.02
       objectReference: {fileID: 0}
     - target: {fileID: 5082788282831560216, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.484308
+      value: -18.01
       objectReference: {fileID: 0}
     - target: {fileID: 5082788282831560216, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalRotation.w
@@ -101767,7 +101767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5082788282831560216, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.630799
+      value: 14.18
       objectReference: {fileID: 0}
     - target: {fileID: 5082788282831560216, guid: 19a9cf80441de78408e0298327fa7a16, type: 3}
       propertyPath: m_LocalPosition.z
@@ -109745,7 +109745,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 16d228cdc40114346b1de106e2e913cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -134870,6 +134870,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 905197282}
     m_Modifications:
+    - target: {fileID: 4723429848166392359, guid: 829ce4c1533c99f499032bbdc0b8c2b7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 16d228cdc40114346b1de106e2e913cc, type: 2}
     - target: {fileID: 7279279926948830185, guid: 829ce4c1533c99f499032bbdc0b8c2b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6396885
@@ -134910,6 +134914,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7507808300089548385, guid: 829ce4c1533c99f499032bbdc0b8c2b7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 16d228cdc40114346b1de106e2e913cc, type: 2}
     - target: {fileID: 7948539062923215187, guid: 829ce4c1533c99f499032bbdc0b8c2b7, type: 3}
       propertyPath: m_Name
       value: Camp Fire

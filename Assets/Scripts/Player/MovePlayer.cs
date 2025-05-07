@@ -61,7 +61,6 @@ public class MovePlayer : MonoBehaviour
             movement += transform.right;
         }
 
-        Debug.Log(_finalSpeed);
         _characterController.Move(movement * _finalSpeed * Time.deltaTime);
     }
 

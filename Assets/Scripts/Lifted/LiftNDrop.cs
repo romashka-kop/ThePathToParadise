@@ -42,19 +42,19 @@ public class LiftNDrop : MonoBehaviour
             {
                 _imageCrosshair.texture = _crosshairTakeIcon;
 
-                if (Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[6]))
+                if (Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
                     PrepareForLift(hit);
             }
         }
 
         if (_liftedObject != null)
         {
-            if (Input.GetKeyDown( SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
+            if (Input.GetKeyDown( SettingsTransitions.DataSettings.PlayerControlKeyCode[8]))
             {
                 _isLift = false;
                 Drop();
             }
-            if (Input.GetKeyDown( SettingsTransitions.DataSettings.PlayerControlKeyCode[8]))
+            if (Input.GetKeyDown( SettingsTransitions.DataSettings.PlayerControlKeyCode[9]))
             {
                 DropWithForce();
             }

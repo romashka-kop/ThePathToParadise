@@ -19,8 +19,8 @@ public class MovePlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        Sprint(Input.GetKey(KeyCode.LeftShift));
-        Squat(Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[5]));
+        Sprint(Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[5]));
+        Squat(Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[6]));
         MovePlayerPosition();
         Gravity(_characterController.isGrounded);
         Jump(_characterController.isGrounded);

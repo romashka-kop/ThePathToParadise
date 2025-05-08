@@ -1,11 +1,12 @@
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Lift : MonoBehaviour
 {
     [SerializeField] private float _mass = 1;
-    //[SerializeField] private ParticleSystem _particle;
+    [SerializeField] private ParticleSystem _particle;
     private const string _tag = "Lifted";
     private const byte _defaultLayer = 0;
     private const byte _liftLayer = 3;
@@ -44,16 +45,10 @@ public class Lift : MonoBehaviour
         _rb.freezeRotation = freezzeRotation;
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    Debug.Log("Удар");
-    //    Instantiate(_particle, collision.transform.position, Quaternion.identity);
-    //    DestroyParticle();
-    //}
-
-    //private async void DestroyParticle()
-    //{
-    //    await Task.Delay(2000);
-    //    DestroyImmediate(_particle,true);
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        ParticleSystem particle = Instantiate(_particle, collision.transform.position, Quaternion.identity);
+        particle.Play();
+        Destroy(particle.gameObject, 1);
+    }
 }

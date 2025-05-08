@@ -15,7 +15,7 @@ public class MenuManager : MonoBehaviour
     public Button ToRoma;
 
     [SerializeField] Image _uploadGraphicImage;
-
+    [SerializeField] private AudioSource _audio;
     public static bool IsOpenedSettings = false;
     public static bool IsUploadGraphics = false;
 
@@ -50,11 +50,13 @@ public class MenuManager : MonoBehaviour
 
     public void Continue()
     {
+        _audio.Play();
         LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
     }
 
     public void NewGame()
     {
+        _audio.Play();
         _dataScene.IndexLvl = 1;
         _dataScene.Save(_dataScene, "SceneData.json");
         LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
@@ -62,6 +64,7 @@ public class MenuManager : MonoBehaviour
 
     public void Settings()
     {
+        _audio.Play();
         IsOpenedSettings = !IsOpenedSettings;
         CanvasSettings.SetActive(IsOpenedSettings);
         Animator anim = CanvasSettings.GetComponent<Animator>();
@@ -70,16 +73,19 @@ public class MenuManager : MonoBehaviour
 
     public void ExitGame()
     {
+        _audio.Play();
         Application.Quit();
     }
 
     private void ClickToRoma()
     {
+        _audio.Play();
         Application.OpenURL(_urlRoma);
     }
 
     private void ClickToKirill()
     {
+        _audio.Play();
         Application.OpenURL(_urlKirill);
     }
 

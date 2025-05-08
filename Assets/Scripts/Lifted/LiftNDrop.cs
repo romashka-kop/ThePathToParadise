@@ -5,12 +5,7 @@ public class LiftNDrop : MonoBehaviour
 {
     private const string _tag = "Lifted";
 
-    private bool _isLift = false;
-
-    private RawImage _imageCrosshair;
-
-    [SerializeField] private Texture _crosshairDefaultIcon;
-    [SerializeField] private Texture _crosshairTakeIcon;
+    public static bool _isLift = false;
 
     [SerializeField] private float _dropForce = 10;
     [SerializeField] private float _speedLift = 15;
@@ -26,22 +21,14 @@ public class LiftNDrop : MonoBehaviour
 
     private GameObject _liftedObject;
 
-    private void Start()
-    {
-        _imageCrosshair = GameObject.Find("RawImage").GetComponent<RawImage>();
-    }
-
     void Update()
     {
-        _imageCrosshair.texture = _crosshairDefaultIcon;
         RaycastHit hit;
 
         if (Physics.Raycast(_playerCamera.position, _playerCamera.forward, out hit, _maxDistanceRay, _layerMask))
         {
             if (hit.transform.CompareTag(_tag))
             {
-                _imageCrosshair.texture = _crosshairTakeIcon;
-
                 if (Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
                     PrepareForLift(hit);
             }
@@ -87,7 +74,6 @@ public class LiftNDrop : MonoBehaviour
 
     private void PrepareForLift(RaycastHit hit)
     {
-        _imageCrosshair.texture = _crosshairDefaultIcon;
         _isLift = true;
         _liftedObject = hit.transform.gameObject;
         _rigidbodyLiftedObject = _liftedObject.GetComponent<Rigidbody>();

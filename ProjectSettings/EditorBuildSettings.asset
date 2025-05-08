@@ -11,5 +11,23 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TrainingLvl.unity
     guid: 57c2e7288c427054d8972da5ec950a17
+  - enabled: 1
+    path: Assets/Scenes/Lvl 1 Labirint.unity
+    guid: ab654443df500704cb8d6d9b007cb510
+  - enabled: 1
+    path: Assets/Scenes/Lvl 2 tropa.unity
+    guid: 7bd113bec3256ae4bb4575448f049928
+  - enabled: 1
+    path: Assets/Scenes/Lvl 3 Cube.unity
+    guid: 6a3c9c022ba08cb4aa8a07846b710843
+  - enabled: 1
+    path: Assets/Scenes/Lvl 4 Parcur.unity
+    guid: 53c6cdf9f9a6e254082ad1c76a4c4d07
+  - enabled: 1
+    path: Assets/Scenes/Lvl 5 Tropa_hard.unity
+    guid: eea9c005eafbbf845b0b85e089b5751a
+  - enabled: 1
+    path: Assets/Scenes/Lvl 6 Droper.unity
+    guid: cda897583517d634eb66c1431ce0b03b
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

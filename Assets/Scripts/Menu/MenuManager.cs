@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,10 @@ public class MenuManager : MonoBehaviour
     public Button ToKirill;
     public Button ToRoma;
 
+    [SerializeField] Image _uploadGraphicImage;
+
     public static bool IsOpenedSettings = false;
+    public static bool IsUploadGraphics = false;
 
     private const string _urlRoma = "https://vk.com/romashkaaaa_a";
     private const string _urlKirill = "https://web.telegram.org/a/#-1001617083906";
@@ -28,13 +32,18 @@ public class MenuManager : MonoBehaviour
     {
         _dataScene = _dataScene.Load<SaveDataScene>(_dataScene, "SceneData.json");
         SettingsTransitions.DataSettings = SettingsTransitions.DataSettings.Load<SaveDataSettings>(SettingsTransitions.DataSettings, "SettingsData.json");
+
         ContinueButton.onClick.AddListener(Continue);
         NewGameButton.onClick.AddListener(NewGame);
         SettingsButton.onClick.AddListener(Settings);
         QuitButton.onClick.AddListener(ExitGame);
         ToRoma.onClick.AddListener(ClickToRoma);
         ToKirill.onClick.AddListener(ClickToKirill);
+
         CanvasSettings.SetActive(IsOpenedSettings);
+
+        if (IsUploadGraphics == false)
+            UploadingGraphics();
 
         CheckSaveGame();
     }
@@ -43,11 +52,14 @@ public class MenuManager : MonoBehaviour
     {
         LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
     }
+
     public void NewGame()
     {
         _dataScene.IndexLvl = 1;
+        _dataScene.Save(_dataScene, "SceneData.json");
         LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
     }
+
     public void Settings()
     {
         IsOpenedSettings = !IsOpenedSettings;
@@ -55,6 +67,7 @@ public class MenuManager : MonoBehaviour
         Animator anim = CanvasSettings.GetComponent<Animator>();
         anim.SetTrigger("OpenSettingsTrigger");
     }
+
     public void ExitGame()
     {
         Application.Quit();
@@ -70,6 +83,22 @@ public class MenuManager : MonoBehaviour
         Application.OpenURL(_urlKirill);
     }
 
+    private async void UploadingGraphics()
+    {
+        CanvasSettings.SetActive(true);
+        _uploadGraphicImage.gameObject.SetActive(true);
+
+        await Task.Delay(2000);
+
+        if (IsUploadGraphics)
+        {
+            _uploadGraphicImage.gameObject.SetActive(false);
+            CanvasSettings.SetActive(false);
+        }
+        else UploadingGraphics();
+
+    }
+
     private void CheckSaveGame()
     {
         ColorBlock colorBlock = ContinueButton.colors;
@@ -77,7 +106,7 @@ public class MenuManager : MonoBehaviour
         {
             ContinueButton.enabled = false;
             colorBlock.normalColor = new Color(0.5921569f, 0.5921569f, 0.5921569f, 0.5f);
-            ContinueButton.GetComponent<Image>().color = new Color(0,0,0,1);
+            ContinueButton.GetComponent<Image>().color = new Color(0, 0, 0, 1);
         }
         else
         {

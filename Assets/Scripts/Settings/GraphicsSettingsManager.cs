@@ -27,7 +27,7 @@ public class GraphicsSettingsManager : MonoBehaviour
     private void Init()
     {
         Dropdowns = new TMP_Dropdown[] {ScreenResolution, FPS, GraphicQuality, TextureQuality, Shadows, ShadowsQuality, Smoothing, AnisotropicFiltration };
-        LoadGraphicSave(Dropdowns);
+        LoadGraphicSave();
 
         if (FPS != null)
             FPS.onValueChanged.AddListener(delegate { ChangeFPSLimit(FPS); });
@@ -54,10 +54,10 @@ public class GraphicsSettingsManager : MonoBehaviour
             AnisotropicFiltration.onValueChanged.AddListener(delegate { ChangeAnisotropicFiltration(AnisotropicFiltration); });
     }
 
-    private void LoadGraphicSave(TMP_Dropdown[] dropdowns)
+    private void LoadGraphicSave()
     {
-        for (int i = 0; i < dropdowns.Length; i++)
-            dropdowns[i].value = SettingsTransitions.DataSettings.graphicIndexSettings[i];
+        for (int i = 0; i < Dropdowns.Length; i++)
+            Dropdowns[i].value = SettingsTransitions.DataSettings.graphicIndexSettings[i];
 
         ChangeScreenResolution(ScreenResolution);
         ChangeFPSLimit(FPS);
@@ -67,6 +67,8 @@ public class GraphicsSettingsManager : MonoBehaviour
         ChangeShadowsQuality(ShadowsQuality);
         ChangeSmoothing(Smoothing);
         ChangeAnisotropicFiltration(AnisotropicFiltration);
+        MenuManager.IsUploadGraphics = true;
+        Debug.Log("Подгрузка прошла" + MenuManager.IsUploadGraphics);
     }
 
     private void SaveGraphic()

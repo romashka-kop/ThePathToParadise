@@ -101,6 +101,7 @@ public class SettingsTransitions : MonoBehaviour
     {
         await Task.Delay(1000);
         gameObject.SetActive(false);
+
     }
 
     private void SwitchMenuSettings(GameObject activPanel, Button activButton)

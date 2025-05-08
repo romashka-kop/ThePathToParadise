@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 4159851765721529781}
   m_Layer: 6
   m_Name: 'Player '
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 3904810158277811165}
   - component: {fileID: 7999125121558381403}
   - component: {fileID: 830590795755670003}
+  - component: {fileID: 2996610834253641132}
   m_Layer: 6
   m_Name: CameraPlayer
   m_TagString: Untagged
@@ -283,13 +284,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e25ce5e22bd045b5a270550a3ca72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _crosshairDefaultIcon: {fileID: 2800000, guid: 41d608d82c5793e4fb0e74f25299f734, type: 3}
-  _crosshairTakeIcon: {fileID: 2800000, guid: db60c4ba10533ed4eb09534c9f39c608, type: 3}
   _dropForce: 20
   _speedLift: 15
   _maxDistanceRay: 4
   _point: {fileID: 5232498626230697846}
   _playerCamera: {fileID: 3308753281964293321}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+--- !u!114 &2996610834253641132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3646689030858818823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07403692ad1f2804fafb32baeb305f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _crosshairDefaultIcon: {fileID: 2800000, guid: 41d608d82c5793e4fb0e74f25299f734, type: 3}
+  _crosshairTakeIcon: {fileID: 2800000, guid: db60c4ba10533ed4eb09534c9f39c608, type: 3}
+  _playerCamera: {fileID: 3308753281964293321}
+  _maxDistanceRay: 4
   _layerMask:
     serializedVersion: 2
     m_Bits: 1

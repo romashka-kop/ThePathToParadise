@@ -12,7 +12,7 @@ public class MenuSound : MonoBehaviour
 
     void Update()
     {
-        _audio.volume = SettingsTransitions.DataSettings.MusicValue;
+        _audio.volume = SettingsTransitions.DataSettings.MenuSoundValue;
     }
 
     public void ClickButton()

@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,8 @@ public class MenuManager : MonoBehaviour
     public static bool IsOpenedSettings = false;
     public static bool IsUploadGraphics = false;
 
+
+    private Button[] buttonsScene; 
     private const string _urlRoma = "https://vk.com/romashkaaaa_a";
     private const string _urlKirill = "https://web.telegram.org/a/#-1001617083906";
     private SaveDataScene _dataScene = new();
@@ -32,6 +35,10 @@ public class MenuManager : MonoBehaviour
     {
         _dataScene = _dataScene.Load<SaveDataScene>(_dataScene, "SceneData.json");
         SettingsTransitions.DataSettings = SettingsTransitions.DataSettings.Load<SaveDataSettings>(SettingsTransitions.DataSettings, "SettingsData.json");
+
+        buttonsScene = Resources.FindObjectsOfTypeAll<Button>().Where(button => button.gameObject.scene == gameObject.scene).ToArray();
+        foreach (Button button in buttonsScene)
+            button.onClick.AddListener(PlaySoundClick);
 
         ContinueButton.onClick.AddListener(Continue);
         NewGameButton.onClick.AddListener(NewGame);
@@ -50,13 +57,11 @@ public class MenuManager : MonoBehaviour
 
     public void Continue()
     {
-        _audio.Play();
         LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
     }
 
     public void NewGame()
     {
-        _audio.Play();
         _dataScene.IndexLvl = 1;
         _dataScene.Save(_dataScene, "SceneData.json");
         LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
@@ -64,7 +69,6 @@ public class MenuManager : MonoBehaviour
 
     public void Settings()
     {
-        _audio.Play();
         IsOpenedSettings = !IsOpenedSettings;
         CanvasSettings.SetActive(IsOpenedSettings);
         Animator anim = CanvasSettings.GetComponent<Animator>();
@@ -73,20 +77,22 @@ public class MenuManager : MonoBehaviour
 
     public void ExitGame()
     {
-        _audio.Play();
         Application.Quit();
     }
 
     private void ClickToRoma()
     {
-        _audio.Play();
         Application.OpenURL(_urlRoma);
     }
 
     private void ClickToKirill()
     {
-        _audio.Play();
         Application.OpenURL(_urlKirill);
+    }
+
+    private void PlaySoundClick()
+    {
+        _audio.Play();
     }
 
     private async void UploadingGraphics()

@@ -15,6 +15,6 @@ public class SaveDataSettings : AbsSaveData
     #endregion
 
     #region Настройки Звуков
-    public float MusicValue = 50f;
+    public float MusicValue = 1f;
     #endregion
 }

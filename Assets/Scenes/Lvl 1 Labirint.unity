@@ -6999,7 +6999,7 @@ PrefabInstance:
     - target: {fileID: 2918348558828219820, guid: 354fdec43fc2ed84392e692e8a3efbee, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 0}
     - target: {fileID: 2918348558828219820, guid: 354fdec43fc2ed84392e692e8a3efbee, type: 3}
       propertyPath: m_Name
       value: 'LastFloor '
@@ -25544,7 +25544,7 @@ Transform:
   m_GameObject: {fileID: 1384063558}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 195.2, y: -20.133, z: -212.711}
+  m_LocalPosition: {x: 195.2, y: -17.01, z: -212.711}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

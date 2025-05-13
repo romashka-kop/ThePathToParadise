@@ -10,6 +10,7 @@ public class ChangeLevelTrigger : MonoBehaviour
         _dataScene = _dataScene.Load<SaveDataScene>(_dataScene, "SceneData.json");
         if (other.gameObject.tag == "Player")
         {
+            LiftNDrop.IsLift = false;
             _dataScene.IndexLvl += 1;
             _dataScene.Save(_dataScene, "SceneData.json");
             LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);

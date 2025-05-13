@@ -22,11 +22,11 @@ public class MovePlayer : MonoBehaviour
 
     void FixedUpdate()
     {
+        Jump(_characterController.isGrounded);
         Sprint();
         Squat();
         MovePlayerPosition();
         Gravity(_characterController.isGrounded);
-        Jump(_characterController.isGrounded);
     }
 
     private void MovePlayerPosition()
@@ -39,9 +39,8 @@ public class MovePlayer : MonoBehaviour
         //Jump = MenuManager.DataSettings.PlayerControlKeyCode[4]
         //Run = MenuManager.DataSettings.PlayerControlKeyCode[5]
         //Squat = MenuManager.DataSettings.PlayerControlKeyCode[6]
-        //Take = MenuManager.DataSettings.PlayerControlKeyCode[7]
-        //Drop = MenuManager.DataSettings.PlayerControlKeyCode[8]
-        //ForceDrop = MenuManager.DataSettings.PlayerControlKeyCode[9]
+        //Take/Drop = MenuManager.DataSettings.PlayerControlKeyCode[7]
+        //ForceDrop = MenuManager.DataSettings.PlayerControlKeyCode[8]
         #endregion
 
         Vector3 movement = Vector3.zero;

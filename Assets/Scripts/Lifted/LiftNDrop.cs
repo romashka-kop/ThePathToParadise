@@ -5,7 +5,7 @@ public class LiftNDrop : MonoBehaviour
 {
     private const string _tag = "Lifted";
 
-    public static bool _isLift = false;
+    public static bool IsLift = false;
 
     [SerializeField] private float _dropForce = 10;
     [SerializeField] private float _speedLift = 15;
@@ -19,6 +19,8 @@ public class LiftNDrop : MonoBehaviour
 
     private Rigidbody _rigidbodyLiftedObject;
 
+    private float _maxDistanceObject = 12f;
+
     private GameObject _liftedObject;
 
     void Update()
@@ -29,28 +31,26 @@ public class LiftNDrop : MonoBehaviour
         {
             if (hit.transform.CompareTag(_tag))
             {
-                if (Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
+                if (IsLift == false && Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
                     PrepareForLift(hit);
             }
         }
-
-        if (_liftedObject != null)
+        else if (_liftedObject != null && IsLift)
         {
-            if (Input.GetKeyDown( SettingsTransitions.DataSettings.PlayerControlKeyCode[8]))
-            {
-                _isLift = false;
+            float distanceObject = Vector3.Distance(gameObject.transform.position, _liftedObject.transform.position);
+
+            if (distanceObject > _maxDistanceObject)
                 Drop();
-            }
-            if (Input.GetKeyDown( SettingsTransitions.DataSettings.PlayerControlKeyCode[9]))
-            {
+            else if (Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
+                Drop();
+            else if (Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[8]))
                 DropWithForce();
-            }
         }
     }
 
     void FixedUpdate()
     {
-        if (_isLift && _liftedObject != null)
+        if (IsLift && _liftedObject != null)
             Lift();
     }
 
@@ -74,7 +74,7 @@ public class LiftNDrop : MonoBehaviour
 
     private void PrepareForLift(RaycastHit hit)
     {
-        _isLift = true;
+        IsLift = true;
         _liftedObject = hit.transform.gameObject;
         _rigidbodyLiftedObject = _liftedObject.GetComponent<Rigidbody>();
         _liftedObject.GetComponent<Lift>().PrepareForLift();
@@ -82,7 +82,7 @@ public class LiftNDrop : MonoBehaviour
 
     private void PrepareForDrop()
     {
-        _isLift = false;
+        IsLift = false;
         _liftedObject = null;
         _rigidbodyLiftedObject = null;
     }

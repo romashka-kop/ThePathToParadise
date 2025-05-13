@@ -36,15 +36,13 @@ public class PlayerUIController : MonoBehaviour
         if (Physics.Raycast(_playerCamera.position, _playerCamera.forward, out hit, _maxDistanceRay, _layerMask))
         {
             if (hit.transform.CompareTag(_tag))
-            {
                 ChangeUICrosshair(_crosshairTakeIcon, $"[{SettingsTransitions.DataSettings.PlayerControlKeyCode[7]}]");
-            }
         }
 
-        if (LiftNDrop._isLift)
-            ChangeUIText($"Положить [{SettingsTransitions.DataSettings.PlayerControlKeyCode[8]}]",$"Бросить [{SettingsTransitions.DataSettings.PlayerControlKeyCode[9]}]");
+        if (LiftNDrop.IsLift)
+            ChangeUIText($"Положить [{SettingsTransitions.DataSettings.PlayerControlKeyCode[7]}]", $"Бросить [{SettingsTransitions.DataSettings.PlayerControlKeyCode[8]}]");
         else
-            ChangeUIText("","");
+            ChangeUIText("", "");
     }
 
     private void ChangeUICrosshair(Texture image, string text)

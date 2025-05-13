@@ -68,7 +68,6 @@ public class GraphicsSettingsManager : MonoBehaviour
         ChangeSmoothing(Smoothing);
         ChangeAnisotropicFiltration(AnisotropicFiltration);
         MenuManager.IsUploadGraphics = true;
-        Debug.Log("Подгрузка прошла" + MenuManager.IsUploadGraphics);
     }
 
     private void SaveGraphic()
@@ -119,7 +118,14 @@ public class GraphicsSettingsManager : MonoBehaviour
 
     private void ChangeTextureQuality(TMP_Dropdown dropdown)
     {
-        QualitySettings.globalTextureMipmapLimit = dropdown.value;
+        QualitySettings.globalTextureMipmapLimit =  dropdown.value switch
+        {
+            0 => 3,
+            1 => 2,
+            2 => 1,
+            3 => 0,
+            _ => 2
+        };
     }
 
     private void ChangeShadows(TMP_Dropdown dropdown)

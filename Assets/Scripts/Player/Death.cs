@@ -14,7 +14,6 @@ public class Death : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Смерть");
             _controller = other.gameObject.GetComponent<CharacterController>();
             _controller.enabled = false;
             other.gameObject.transform.position = _spawnPoint.transform.position;

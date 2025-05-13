@@ -35,7 +35,7 @@ public class PlayerUIController : MonoBehaviour
 
         if (Physics.Raycast(_playerCamera.position, _playerCamera.forward, out hit, _maxDistanceRay, _layerMask))
         {
-            if (hit.transform.CompareTag(_tag))
+            if (hit.transform.CompareTag(_tag) && LiftNDrop.IsLift == false)
                 ChangeUICrosshair(_crosshairTakeIcon, $"[{SettingsTransitions.DataSettings.PlayerControlKeyCode[7]}]");
         }
 

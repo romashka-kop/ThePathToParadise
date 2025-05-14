@@ -17,11 +17,20 @@ public class LiftNDrop : MonoBehaviour
 
     [SerializeField] private LayerMask _layerMask;
 
+    [SerializeField] private AudioClip _clip;
+
     private Rigidbody _rigidbodyLiftedObject;
 
     private float _maxDistanceObject = 12f;
 
     private GameObject _liftedObject;
+
+    private AudioSource _audio;
+
+    private void Start()
+    {
+        _audio = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -32,7 +41,11 @@ public class LiftNDrop : MonoBehaviour
             if (hit.transform.CompareTag(_tag))
             {
                 if (IsLift == false && Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
+                {
+                    _audio.resource = _clip;
+                    _audio.Play();
                     PrepareForLift(hit);
+                }
             }
         }
         else if (_liftedObject != null && IsLift)

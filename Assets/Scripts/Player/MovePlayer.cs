@@ -59,7 +59,9 @@ public class MovePlayer : MonoBehaviour
 
         SetSpeedPlayer();
 
-        _characterController.Move(movement * _finalSpeed * Time.deltaTime);
+        Vector3 vector = movement * _finalSpeed * Time.deltaTime;
+
+        _characterController.Move(vector);
     }
 
     private void Gravity(bool isGrounded)
@@ -74,7 +76,10 @@ public class MovePlayer : MonoBehaviour
     private void Jump(bool isGrounded)
     {
         if (isGrounded && Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[4]))
+        {
             _velocity.y = _jumpForce;
+            PlayerSoundControll.PlayerAudio = PlayerSoundControll.StatePlayerAudio.Jump;
+        }
     }
 
     private void Squat()

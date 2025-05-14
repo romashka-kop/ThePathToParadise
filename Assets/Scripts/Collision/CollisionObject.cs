@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
 
 public class CollisionObject : MonoBehaviour
 {
@@ -16,8 +15,7 @@ public class CollisionObject : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         float impactForce = collision.impulse.magnitude;
-
-        if (impactForce > _minImpactForce)
+        if (impactForce > _minImpactForce && LiftNDrop.IsLift == false)
         {
             _audio.Play();
             ParticleSystem particle = Instantiate(_particle, collision.transform.position, Quaternion.identity);

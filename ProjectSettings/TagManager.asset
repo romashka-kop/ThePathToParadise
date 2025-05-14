@@ -6,14 +6,15 @@ TagManager:
   tags:
   - PaintedPrefab
   - DeathArea
+  - Lifted
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - IgnorePlayer
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

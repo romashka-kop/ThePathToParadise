@@ -7,7 +7,7 @@ public class Lift : MonoBehaviour
 {
     [SerializeField] private float _mass = 1;
     private const string _tag = "Lifted";
-    private const byte _defaultLayer = 0;
+    private const byte _defaultLayer = 7;
     private const byte _liftLayer = 3;
 
     private Rigidbody _rb;

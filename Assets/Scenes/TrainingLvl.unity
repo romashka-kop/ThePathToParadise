@@ -16357,7 +16357,7 @@ GameObject:
   - component: {fileID: 1744531760}
   - component: {fileID: 1744531763}
   - component: {fileID: 1744531762}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Lifted
   m_Icon: {fileID: 0}

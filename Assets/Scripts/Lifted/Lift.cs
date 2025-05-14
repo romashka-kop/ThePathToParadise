@@ -6,9 +6,8 @@ using UnityEngine;
 public class Lift : MonoBehaviour
 {
     [SerializeField] private float _mass = 1;
-    [SerializeField] private ParticleSystem _particle;
     private const string _tag = "Lifted";
-    private const byte _defaultLayer = 0;
+    private const byte _defaultLayer = 7;
     private const byte _liftLayer = 3;
 
     private Rigidbody _rb;
@@ -43,12 +42,5 @@ public class Lift : MonoBehaviour
         _rb.useGravity = useGravity;
         _rb.collisionDetectionMode = mode;
         _rb.freezeRotation = freezzeRotation;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        ParticleSystem particle = Instantiate(_particle, collision.transform.position, Quaternion.identity);
-        particle.Play();
-        Destroy(particle.gameObject, 1);
     }
 }

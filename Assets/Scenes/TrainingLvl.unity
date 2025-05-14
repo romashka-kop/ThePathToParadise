@@ -3017,7 +3017,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 4546093460732374689}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 42d9067747dc50d4c90ec5a65eb79c34, type: 3}
       propertyPath: m_LocalScale.x
@@ -3029,15 +3029,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42d9067747dc50d4c90ec5a65eb79c34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 81.95
+      value: -394.78003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42d9067747dc50d4c90ec5a65eb79c34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.37
+      value: 61.45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42d9067747dc50d4c90ec5a65eb79c34, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.6
+      value: -23.93
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42d9067747dc50d4c90ec5a65eb79c34, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3105,6 +3105,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 0.020000003, z: 3}
   m_Center: {x: -1.5, y: 0.11, z: 1.5}
+--- !u!4 &1309050930 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 42d9067747dc50d4c90ec5a65eb79c34, type: 3}
+  m_PrefabInstance: {fileID: 1309050927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1332436363 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7595225820392057735, guid: 440ad0ab039506a4a997ad89db135da0, type: 3}
@@ -5909,7 +5914,10 @@ PrefabInstance:
     - {fileID: 109633324231468855, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
     - {fileID: 4104659660813300024, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
     - {fileID: 1612666108153638258, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8730602108963622123, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1309050930}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8738006568801853626, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
       insertIndex: -1
@@ -5970,6 +5978,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.87394893, y: 1.6884698, z: 0.087464355}
   m_Center: {x: 0.00000047683716, y: -0.0015274583, z: -0.0000038146973}
+--- !u!4 &4546093460732374689 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8730602108963622123, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
+  m_PrefabInstance: {fileID: 4546093460732374684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6124094782541337596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6230,4 +6243,3 @@ SceneRoots:
   - {fileID: 905197282}
   - {fileID: 1876607495}
   - {fileID: 248533444}
-  - {fileID: 1309050927}

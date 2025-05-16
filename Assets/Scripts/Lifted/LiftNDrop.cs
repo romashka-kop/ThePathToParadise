@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LiftNDrop : MonoBehaviour
 {
@@ -15,13 +14,15 @@ public class LiftNDrop : MonoBehaviour
     [SerializeField] private Transform _point;
     [SerializeField] private Transform _playerCamera;
 
-    [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private LayerMask _layerMaskForLift;
+    [SerializeField] private LayerMask _layerMaskForDrop;
 
     [SerializeField] private AudioClip _clip;
 
     private Rigidbody _rigidbodyLiftedObject;
 
-    private float _maxDistanceObject = 12f;
+    private float _maxDistanceObject = 15f;
+    private float _maxDistancePoint = 9f;
 
     private GameObject _liftedObject;
 
@@ -36,7 +37,7 @@ public class LiftNDrop : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(_playerCamera.position, _playerCamera.forward, out hit, _maxDistanceRay, _layerMask))
+        if (Physics.Raycast(_playerCamera.position, _playerCamera.forward, out hit, _maxDistanceRay, _layerMaskForLift))
         {
             if (hit.transform.CompareTag(_tag))
             {
@@ -50,9 +51,16 @@ public class LiftNDrop : MonoBehaviour
         }
         else if (_liftedObject != null && IsLift)
         {
-            float distanceObject = Vector3.Distance(gameObject.transform.position, _liftedObject.transform.position);
+            float distanceObjectPlayer = Vector3.Distance(gameObject.transform.position, _liftedObject.transform.position);
+            float distanceObjectPoint = Vector3.Distance(_point.position, _liftedObject.transform.position);
 
-            if (distanceObject > _maxDistanceObject)
+            if (Physics.Raycast(_playerCamera.position, Vector3.down, out hit, 10, _layerMaskForDrop))
+            {
+                if (hit.transform.CompareTag(_tag) && distanceObjectPoint > _maxDistancePoint)
+                    Drop();
+            }
+
+            else if (distanceObjectPlayer > _maxDistanceObject)
                 Drop();
             else if (Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
                 Drop();

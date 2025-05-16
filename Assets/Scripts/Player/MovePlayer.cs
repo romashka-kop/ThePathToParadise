@@ -7,12 +7,20 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private float _speedSquat = 3f;
     [SerializeField] private float _gravity;
     [SerializeField] private float _jumpForce;
+    [SerializeField] private float _pointTransformSpeed;
+    [SerializeField] private Transform _point;
+    [SerializeField] private PlayerSoundControll _soundControll;  // ссылка на скрипт с звуком
 
     private float _finalSpeed;
+    private float _smoothTime;
+
+    private float _limitPointMax = 4f;
+    private float _limitPointMin = 1.17f;
+
     private CharacterController _characterController;
     private Vector3 _velocity;
 
-    private enum PlayerState { Squat, Sprint, Walk}
+    private enum PlayerState { Squat, Sprint, Walk }
     private PlayerState _playerState;
 
     private void Start()
@@ -27,6 +35,7 @@ public class MovePlayer : MonoBehaviour
         Squat();
         MovePlayerPosition();
         Gravity(_characterController.isGrounded);
+        MovePointLift();
     }
 
     private void MovePlayerPosition()
@@ -62,6 +71,15 @@ public class MovePlayer : MonoBehaviour
         Vector3 vector = movement * _finalSpeed * Time.deltaTime;
 
         _characterController.Move(vector);
+
+        if(vector.magnitude > 0)
+        {
+            _soundControll.PlayFootSteps();
+        }
+        else
+        {
+            _soundControll.StopFootSteps();
+        }
     }
 
     private void Gravity(bool isGrounded)
@@ -78,7 +96,6 @@ public class MovePlayer : MonoBehaviour
         if (isGrounded && Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[4]))
         {
             _velocity.y = _jumpForce;
-            PlayerSoundControll.PlayerAudio = PlayerSoundControll.StatePlayerAudio.Jump;
         }
     }
 
@@ -86,15 +103,15 @@ public class MovePlayer : MonoBehaviour
     {
         if (Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[6]))
         {
-            _characterController.height =  0.5f;
-            _playerState =  PlayerState.Squat;
+            _characterController.height = 0.5f;
+            _playerState = PlayerState.Squat;
         }
         else _characterController.height = 2f;
     }
 
     private void Sprint()
     {
-        if(Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[5]))
+        if (Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[5]))
             _playerState = PlayerState.Sprint;
     }
 
@@ -107,5 +124,27 @@ public class MovePlayer : MonoBehaviour
             _ => _speedWalk
         };
         _playerState = PlayerState.Walk;
+    }
+
+    private void MovePointLift()
+    {
+        float targetZ = _point.localPosition.z;
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        float velocityZ = 0;
+
+        CalculationNewPositionPoint(scroll, targetZ, ref velocityZ);
+    }
+
+    private void CalculationNewPositionPoint(float scroll, float targetZ, ref float velocityZ)
+    {
+        targetZ += scroll * _pointTransformSpeed;
+
+        if (targetZ > _limitPointMax)
+            targetZ = _limitPointMax;
+        else if (targetZ < _limitPointMin)
+            targetZ = _limitPointMin;
+
+        float newZ = Mathf.SmoothDamp(_point.localPosition.z, targetZ, ref velocityZ, _smoothTime);
+        _point.localPosition = new Vector3(0, 0, newZ);
     }
 }

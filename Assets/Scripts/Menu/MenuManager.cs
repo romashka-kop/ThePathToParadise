@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,12 +15,10 @@ public class MenuManager : MonoBehaviour
     public Button ToRoma;
 
     [SerializeField] Image _uploadGraphicImage;
-    [SerializeField] private AudioSource _audio;
     public static bool IsOpenedSettings = false;
     public static bool IsUploadGraphics = false;
 
 
-    private Button[] buttonsScene; 
     private const string _urlRoma = "https://vk.com/romashkaaaa_a";
     private const string _urlKirill = "https://web.telegram.org/a/#-1001617083906";
     private SaveDataScene _dataScene = new();
@@ -35,10 +32,6 @@ public class MenuManager : MonoBehaviour
     {
         _dataScene = _dataScene.Load<SaveDataScene>(_dataScene, "SceneData.json");
         SettingsTransitions.DataSettings = SettingsTransitions.DataSettings.Load<SaveDataSettings>(SettingsTransitions.DataSettings, "SettingsData.json");
-
-        buttonsScene = Resources.FindObjectsOfTypeAll<Button>().Where(button => button.gameObject.scene == gameObject.scene).ToArray();
-        foreach (Button button in buttonsScene)
-            button.onClick.AddListener(PlaySoundClick);
 
         ContinueButton.onClick.AddListener(Continue);
         NewGameButton.onClick.AddListener(NewGame);
@@ -88,11 +81,6 @@ public class MenuManager : MonoBehaviour
     private void ClickToKirill()
     {
         Application.OpenURL(_urlKirill);
-    }
-
-    private void PlaySoundClick()
-    {
-        _audio.Play();
     }
 
     private async void UploadingGraphics()

@@ -184,6 +184,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure red (5)
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -432,6 +436,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (17)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -613,6 +621,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure red (14)
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -638,6 +650,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -776,6 +792,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure red (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -811,6 +831,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -940,6 +964,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -1147,6 +1175,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -1172,7 +1204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5402003821346069078, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -169.83472
+      value: -168.82
       objectReference: {fileID: 0}
     - target: {fileID: 5402003821346069078, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1292,6 +1324,76 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 453d762048f90974c8a7164f9efc863e, type: 3}
   m_PrefabInstance: {fileID: 1211502816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &206246339
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1066434560262199118, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.3814597
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066434560262199118, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.47635
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066434560262199118, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33.478
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066434560262199118, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 55.234
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066434560262199118, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -131.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066434560262199118, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066434560262199118, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066434560262199118, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066434560262199118, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066434560262199118, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066434560262199118, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066434560262199118, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037437585635391904, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+      propertyPath: m_Name
+      value: DoorExit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+--- !u!1 &206246340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5037437585635391904, guid: 3b4872c348adf934a9f60d06a6e99558, type: 3}
+  m_PrefabInstance: {fileID: 206246339}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &208249164 stripped
 Transform:
@@ -1635,6 +1737,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (37)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -1840,6 +1946,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (15)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -1956,6 +2066,68 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1001 &285423275
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 854006483598045052, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 854006483598045052, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 56.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 854006483598045052, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -127.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 854006483598045052, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 854006483598045052, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 854006483598045052, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 854006483598045052, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 854006483598045052, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 854006483598045052, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 854006483598045052, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029828345531136238, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+      propertyPath: m_Name
+      value: openCube
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+--- !u!1 &285423276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4029828345531136238, guid: fe36cf62aabf5da4d963dffcdbd4ff68, type: 3}
+  m_PrefabInstance: {fileID: 285423275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &311073863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,6 +2247,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -2204,6 +2380,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -2524,6 +2704,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (22)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -2653,6 +2837,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Rough Scratched blue (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -2729,6 +2917,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -2867,6 +3059,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure write (6)
       objectReference: {fileID: 0}
     - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -2897,6 +3093,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -3199,6 +3399,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (26)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -3326,6 +3530,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -3565,6 +3773,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (11)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -3754,6 +3966,10 @@ PrefabInstance:
     - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure write (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
       propertyPath: m_TagString
@@ -3967,6 +4183,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure red (4)
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -4110,6 +4330,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -4462,6 +4686,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (36)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -4788,6 +5016,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure write (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -4863,6 +5095,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -5091,6 +5327,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure red (8)
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -5166,6 +5406,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -5455,6 +5699,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (10)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -5584,6 +5832,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (34)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -5711,6 +5963,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -6002,6 +6258,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -6439,6 +6699,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (39)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -6766,6 +7030,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure red (6)
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -6796,6 +7064,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -6875,6 +7147,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -7345,6 +7621,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure red (7)
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -7454,6 +7734,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -7820,7 +8104,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8882506737255596983, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
+    - {fileID: 7779151166875460763, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1612666108153638258, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
     - {fileID: 6979577102977363077, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
@@ -7949,6 +8235,10 @@ PrefabInstance:
     - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Rough Scratched blue (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
       propertyPath: m_TagString
@@ -8137,6 +8427,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (23)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -8264,6 +8558,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -8572,6 +8870,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (35)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -8834,6 +9136,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure write
       objectReference: {fileID: 0}
     - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -8993,7 +9299,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -19.7771
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8882506737255596983, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
+    - {fileID: 7779151166875460763, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
     m_RemovedGameObjects:
     - {fileID: 4104659660813300024, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
     - {fileID: 3855263535148468357, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
@@ -9169,6 +9477,10 @@ PrefabInstance:
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure red (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
@@ -9468,6 +9780,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -9655,6 +9971,84 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 960561225}
   m_SourcePrefab: {fileID: 100100000, guid: 453d762048f90974c8a7164f9efc863e, type: 3}
+--- !u!1001 &1479360288
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2113376342082102501, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: _door
+      value: 
+      objectReference: {fileID: 206246340}
+    - target: {fileID: 2113376342082102501, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: _triggerCube
+      value: 
+      objectReference: {fileID: 285423276}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.5199814
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 52.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -62.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009274079065011706, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235328297860632763, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+      propertyPath: m_Name
+      value: CubeBox
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6373845238921015363, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7793e3a663fee3409a2553298a75e24, type: 3}
 --- !u!1001 &1479932054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9718,6 +10112,10 @@ PrefabInstance:
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure red (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
@@ -10009,6 +10407,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure red
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -10163,6 +10565,10 @@ PrefabInstance:
     - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure write (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
       propertyPath: m_TagString
@@ -10332,6 +10738,10 @@ PrefabInstance:
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure red (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
@@ -10654,6 +11064,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (13)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -10783,6 +11197,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (21)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -10910,6 +11328,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -11109,6 +11531,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (29)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -11295,6 +11721,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure write (4)
       objectReference: {fileID: 0}
     - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -11372,6 +11802,10 @@ PrefabInstance:
     - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure write (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6801955793903224657, guid: 0d2b9188252a78b4298fb8e34d9229ee, type: 3}
       propertyPath: m_TagString
@@ -11688,6 +12122,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Rough Scratched blue (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -11906,6 +12344,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (8)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -12033,6 +12475,10 @@ PrefabInstance:
     - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Rough Scratched blue (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
       propertyPath: m_TagString
@@ -12316,6 +12762,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure blue (5)
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -12487,6 +12937,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -12860,6 +13314,10 @@ PrefabInstance:
     - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Rough Scratched blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
       propertyPath: m_TagString
@@ -13307,6 +13765,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure red (12)
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -13500,6 +13962,10 @@ PrefabInstance:
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Glossy Pure blue (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4736684505242452204, guid: c7675d177a715e348afc15f0fd5012b2, type: 3}
       propertyPath: m_TagString
@@ -13716,6 +14182,10 @@ PrefabInstance:
       value: Dice_d6_Plastic Glossy Pure red (9)
       objectReference: {fileID: 0}
     - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871990578716197019, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
       propertyPath: m_TagString
       value: Lifted
       objectReference: {fileID: 0}
@@ -13841,6 +14311,10 @@ PrefabInstance:
     - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
       propertyPath: m_Name
       value: Dice_d6_Plastic Rough Scratched blue (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8611441520705628849, guid: 0520e268e72d34844b52ad3a8b2473ff, type: 3}
       propertyPath: m_TagString
@@ -14650,3 +15124,6 @@ SceneRoots:
   - {fileID: 1180664868}
   - {fileID: 951508805}
   - {fileID: 1569481442}
+  - {fileID: 206246339}
+  - {fileID: 285423275}
+  - {fileID: 1479360288}

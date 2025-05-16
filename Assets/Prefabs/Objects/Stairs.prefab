@@ -771,6 +771,7 @@ GameObject:
   - component: {fileID: 8476590656002146288}
   - component: {fileID: 7413244663949119646}
   - component: {fileID: 5281986882463423859}
+  - component: {fileID: 7826432179783221452}
   m_Layer: 0
   m_Name: Floor (1)
   m_TagString: Untagged
@@ -846,6 +847,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7826432179783221452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027435668715566465}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 0.020000003, z: 3}
+  m_Center: {x: -1.4999847, y: 0.11, z: 1.5}
 --- !u!1 &2725326482350545358
 GameObject:
   m_ObjectHideFlags: 0
@@ -2694,7 +2716,6 @@ GameObject:
   - component: {fileID: 1460572072025344756}
   - component: {fileID: 5034956964639119775}
   - component: {fileID: 7724434773283961336}
-  - component: {fileID: 171390560108219556}
   m_Layer: 0
   m_Name: Easy_Door 1
   m_TagString: Untagged
@@ -2771,24 +2792,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &171390560108219556
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8738006568801853626}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.87394893, y: 1.6884698, z: 0.087464355}
-  m_Center: {x: 0.00000047683716, y: -0.0015274583, z: -0.0000038146973}

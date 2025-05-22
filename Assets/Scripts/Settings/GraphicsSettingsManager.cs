@@ -26,7 +26,7 @@ public class GraphicsSettingsManager : MonoBehaviour
 
     private void Init()
     {
-        Dropdowns = new TMP_Dropdown[] {ScreenResolution, FPS, GraphicQuality, TextureQuality, Shadows, ShadowsQuality, Smoothing, AnisotropicFiltration };
+        Dropdowns = new TMP_Dropdown[] { ScreenResolution, FPS, GraphicQuality, TextureQuality, Shadows, ShadowsQuality, Smoothing, AnisotropicFiltration };
         LoadGraphicSave();
 
         if (FPS != null)
@@ -67,7 +67,9 @@ public class GraphicsSettingsManager : MonoBehaviour
         ChangeShadowsQuality(ShadowsQuality);
         ChangeSmoothing(Smoothing);
         ChangeAnisotropicFiltration(AnisotropicFiltration);
-        MenuManager.IsUploadGraphics = true;
+
+        if (MenuManager.IsUploadGraphics == false)
+            MenuManager.IsUploadGraphics = true;
     }
 
     private void SaveGraphic()
@@ -118,7 +120,7 @@ public class GraphicsSettingsManager : MonoBehaviour
 
     private void ChangeTextureQuality(TMP_Dropdown dropdown)
     {
-        QualitySettings.globalTextureMipmapLimit =  dropdown.value switch
+        QualitySettings.globalTextureMipmapLimit = dropdown.value switch
         {
             0 => 3,
             1 => 2,

@@ -50,6 +50,7 @@ public class MenuManager : MonoBehaviour
 
     public void Continue()
     {
+        Debug.Log(_dataScene.IndexLvl);
         LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
     }
 

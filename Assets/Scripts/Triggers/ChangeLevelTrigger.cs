@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent (typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))]
 public class ChangeLevelTrigger : MonoBehaviour
 {
     private SaveDataScene _dataScene = new();
@@ -10,10 +10,16 @@ public class ChangeLevelTrigger : MonoBehaviour
         _dataScene = _dataScene.Load<SaveDataScene>(_dataScene, "SceneData.json");
         if (other.gameObject.tag == "Player")
         {
+            Debug.Log(_dataScene.IndexLvl);
             LiftNDrop.IsLift = false;
             _dataScene.IndexLvl += 1;
             _dataScene.Save(_dataScene, "SceneData.json");
             LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
+            if (_dataScene.IndexLvl == 9)
+            {
+                _dataScene.IndexLvl = 8;
+                _dataScene.Save(_dataScene, "SceneData.json");
+            }
         }
     }
 }

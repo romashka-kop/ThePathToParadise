@@ -24257,6 +24257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d13a532b123c37046a89f750d984f257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnPoint: {fileID: 1523905247}
+  _spawnCube: {fileID: 1523905247}
 --- !u!1001 &2122324390
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -164,7 +164,7 @@ MonoBehaviour:
   _speedSprint: 16
   _speedSquat: 4
   _gravity: 15
-  _jumpForce: 8
+  _jumpForce: 10
   _pointTransformSpeed: 10
   _point: {fileID: 5232498626230697846}
   _soundControll: {fileID: 1436463806729322520}

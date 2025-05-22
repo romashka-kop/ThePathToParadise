@@ -401,6 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5009274079065011706}
+  - component: {fileID: -3592389697520356393}
   m_Layer: 0
   m_Name: CubeBox 1
   m_TagString: Untagged
@@ -429,6 +430,20 @@ Transform:
   - {fileID: 2199712754744309329}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3592389697520356393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235328297860632763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857b7c38840c37d4285658849161f1b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _door: {fileID: 0}
+  _triggerCube: {fileID: 0}
 --- !u!1 &8771476815942439505
 GameObject:
   m_ObjectHideFlags: 0

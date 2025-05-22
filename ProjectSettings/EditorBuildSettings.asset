@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/TrainingLvl.unity
-    guid: 57c2e7288c427054d8972da5ec950a17
+    guid: ff7ec689f02d9734ca299da4683d35c1
   - enabled: 1
     path: Assets/Scenes/Lvl 1 Labirint.unity
     guid: ab654443df500704cb8d6d9b007cb510
@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lvl 5 Tropa_hard.unity
     guid: eea9c005eafbbf845b0b85e089b5751a
+  - enabled: 1
+    path: Assets/Scenes/Lvl 7 Parcur.unity
+    guid: 6f563339a781fb748af63fcf803ec659
   - enabled: 1
     path: Assets/Scenes/Lvl 6 Droper.unity
     guid: cda897583517d634eb66c1431ce0b03b

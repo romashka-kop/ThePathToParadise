@@ -11,9 +11,10 @@ public class ChangeLevelTrigger : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             LiftNDrop.IsLift = false;
-            _dataScene.IndexLvl += 1;
+            _dataScene.IndexLvl = _dataScene.GetId() + 1;
+            _dataScene.Calculate();
             _dataScene.Save(_dataScene, "SceneData.json");
-            LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
+            LoadingManager.SwitchSceneLoading(_dataScene.GetId());
         }
     }
 }

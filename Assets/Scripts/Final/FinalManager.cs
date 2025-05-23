@@ -30,6 +30,7 @@ public class FinalManager : MonoBehaviour
         Cursor.visible = true;
 
         _dataScene.IndexLvl = 9;
+        _dataScene.Calculate();
         _dataScene.Save(_dataScene, "SceneData.json");
     }
 

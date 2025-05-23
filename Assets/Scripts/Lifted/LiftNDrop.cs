@@ -44,9 +44,9 @@ public class LiftNDrop : MonoBehaviour
         {
             if (hit.transform.CompareTag(_tag))
             {
-                if (!Physics.Raycast(_charactar.transform.position, Vector3.down, out hitCanLift, 4, _layerMaskForLift))
+                if (Physics.Raycast(_charactar.transform.position, Vector3.down, out hitCanLift, 4, _layerMaskForLift))
                 {
-                    if (IsLift == false && Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
+                    if (IsLift == false && Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]) && CheckObject(hitCanLift, hit))
                     {
                         _audio.resource = _clip;
                         _audio.Play();
@@ -76,6 +76,14 @@ public class LiftNDrop : MonoBehaviour
                 Drop();
             else if (Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[8]))
                 DropWithForce();
+        }
+    }
+
+    private bool CheckObject(RaycastHit hitFoot, RaycastHit hitPoint)
+    {
+        if(hitFoot.transform == hitPoint.transform)
+        {
+
         }
     }
 

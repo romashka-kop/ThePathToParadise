@@ -19,6 +19,8 @@ public class LiftNDrop : MonoBehaviour
 
     [SerializeField] private AudioClip _clip;
 
+    [SerializeField] private CharacterController _charactar;
+
     private Rigidbody _rigidbodyLiftedObject;
 
     private float _maxDistanceObject = 15f;
@@ -36,16 +38,20 @@ public class LiftNDrop : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
+        RaycastHit hitCanLift;
 
         if (Physics.Raycast(_playerCamera.position, _playerCamera.forward, out hit, _maxDistanceRay, _layerMaskForLift))
         {
             if (hit.transform.CompareTag(_tag))
             {
-                if (IsLift == false && Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
+                if (!Physics.Raycast(_charactar.transform.position, Vector3.down, out hitCanLift, 4, _layerMaskForLift))
                 {
-                    _audio.resource = _clip;
-                    _audio.Play();
-                    PrepareForLift(hit);
+                    if (IsLift == false && Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
+                    {
+                        _audio.resource = _clip;
+                        _audio.Play();
+                        PrepareForLift(hit);
+                    }
                 }
             }
         }
@@ -59,7 +65,11 @@ public class LiftNDrop : MonoBehaviour
                 if (hit.transform.CompareTag(_tag) && distanceObjectPoint > _maxDistancePoint)
                     Drop();
             }
-
+            if (Physics.Raycast(_charactar.transform.position, Vector3.down, out hitCanLift, 6, _layerMaskForDrop))
+            {
+                Debug.Log("hkhdf");
+                Drop();
+            }
             else if (distanceObjectPlayer > _maxDistanceObject)
                 Drop();
             else if (Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))

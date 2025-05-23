@@ -542,7 +542,11 @@ MonoBehaviour:
   _layerMaskForDrop:
     serializedVersion: 2
     m_Bits: 8
+  _layer:
+    serializedVersion: 2
+    m_Bits: 8
   _clip: {fileID: 8300000, guid: b62e09ac6b499744a90af0caf36f3fa3, type: 3}
+  _charactar: {fileID: 316687790011155365}
 --- !u!114 &2996610834253641132
 MonoBehaviour:
   m_ObjectHideFlags: 0

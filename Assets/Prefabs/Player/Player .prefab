@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 4159851765721529781}
   - component: {fileID: 7058930130381472923}
   - component: {fileID: 1436463806729322520}
+  - component: {fileID: 2232183042130113280}
   m_Layer: 6
   m_Name: 'Player '
   m_TagString: Player
@@ -168,10 +169,10 @@ MonoBehaviour:
   _pointTransformSpeed: 10
   _point: {fileID: 5232498626230697846}
   _soundControll: {fileID: 1436463806729322520}
-  _cameraPlayer: {fileID: 4302480790509493879}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1
+  _distaneRay: 4
 --- !u!82 &7058930130381472923
 AudioSource:
   m_ObjectHideFlags: 0
@@ -284,6 +285,33 @@ MonoBehaviour:
   _walkClip: {fileID: 8300000, guid: 3aee28a477cf0db4cadb6ccb73be32be, type: 3}
   _audioBody: {fileID: 7058930130381472923}
   _audioCamera: {fileID: 3294165331378093149}
+--- !u!54 &2232183042130113280
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440971813788141218}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &3646689030858818823
 GameObject:
   m_ObjectHideFlags: 0

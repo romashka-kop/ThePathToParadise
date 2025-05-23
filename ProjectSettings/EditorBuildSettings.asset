@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lvl 4 Parcur.unity
     guid: 53c6cdf9f9a6e254082ad1c76a4c4d07
   - enabled: 1
+    path: Assets/Scenes/8lvl.unity
+    guid: e0fa247f3b12a7d4a99aee39510d71f9
+  - enabled: 1
     path: Assets/Scenes/Lvl 5 Tropa_hard.unity
     guid: eea9c005eafbbf845b0b85e089b5751a
   - enabled: 1

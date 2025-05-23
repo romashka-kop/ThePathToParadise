@@ -20,7 +20,7 @@ public class MovePlayer : MonoBehaviour
     private float _limitPointMin = 1.17f;
 
     private CharacterController _characterController;
-    private Vector3 _velocity;
+    public static Vector3 Velocity;
 
     private enum PlayerState { Squat, Sprint, Walk }
     private PlayerState _playerState;
@@ -86,18 +86,18 @@ public class MovePlayer : MonoBehaviour
 
     private void Gravity(bool isGrounded)
     {
-        if (isGrounded && _velocity.y < 0)
-            _velocity.y = -1f;
+        if (isGrounded && Velocity.y < 0)
+            Velocity.y = -1f;
 
-        _velocity.y -= _gravity * Time.fixedDeltaTime;
-        _characterController.Move(_velocity * Time.fixedDeltaTime);
+        Velocity.y -= _gravity * Time.fixedDeltaTime;
+        _characterController.Move(Velocity * Time.fixedDeltaTime);
     }
 
     private void Jump(bool isGrounded)
     {
         if (isGrounded && Input.GetKey(SettingsTransitions.DataSettings.PlayerControlKeyCode[4]))
         {
-            _velocity.y = _jumpForce;
+            Velocity.y = _jumpForce;
         }
     }
 

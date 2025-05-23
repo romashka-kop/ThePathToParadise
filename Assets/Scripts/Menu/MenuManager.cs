@@ -50,7 +50,7 @@ public class MenuManager : MonoBehaviour
 
     public void Continue()
     {
-        LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
+        LoadingManager.SwitchSceneLoading(_dataScene.GetId());
     }
 
     public void NewGame()

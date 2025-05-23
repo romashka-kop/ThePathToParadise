@@ -29,11 +29,8 @@ public class FinalManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        if (_dataScene.IndexLvl == 10)
-        {
-            _dataScene.IndexLvl = 9;
-            _dataScene.Save(_dataScene, "SceneData.json");
-        }
+        _dataScene.IndexLvl = 9;
+        _dataScene.Save(_dataScene, "SceneData.json");
     }
 
     private void ClickToMenu()

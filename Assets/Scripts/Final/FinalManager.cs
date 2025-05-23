@@ -12,6 +12,7 @@ public class FinalManager : MonoBehaviour
     private const string _urlRoma = "https://vk.com/romashkaaaa_a";
     private const string _urlKirill = "https://web.telegram.org/a/#-1001617083906";
     private const string _urlDanill = "https://t.me/seraaworld";
+    private SaveDataScene _dataScene = new();
 
     private void Start()
     {
@@ -27,6 +28,12 @@ public class FinalManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        if (_dataScene.IndexLvl == 10)
+        {
+            _dataScene.IndexLvl = 9;
+            _dataScene.Save(_dataScene, "SceneData.json");
+        }
     }
 
     private void ClickToMenu()

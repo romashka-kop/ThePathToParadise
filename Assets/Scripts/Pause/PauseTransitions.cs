@@ -48,6 +48,7 @@ public class PauseTransitions : MonoBehaviour
 
     private void ExitMenu()
     {
+        LiftNDrop.IsLift = false;
         LoadingManager.SwitchSceneLoading(0);
         SetParametrsExitToMenu();
     }

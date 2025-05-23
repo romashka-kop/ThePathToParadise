@@ -14,11 +14,6 @@ public class ChangeLevelTrigger : MonoBehaviour
             _dataScene.IndexLvl += 1;
             _dataScene.Save(_dataScene, "SceneData.json");
             LoadingManager.SwitchSceneLoading(_dataScene.IndexLvl);
-            if (_dataScene.IndexLvl == 9)
-            {
-                _dataScene.IndexLvl = 8;
-                _dataScene.Save(_dataScene, "SceneData.json");
-            }
         }
     }
 }

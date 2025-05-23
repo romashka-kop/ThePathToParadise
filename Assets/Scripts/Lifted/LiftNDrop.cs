@@ -24,7 +24,7 @@ public class LiftNDrop : MonoBehaviour
     private float _maxDistanceObject = 15f;
     private float _maxDistancePoint = 9f;
 
-    private GameObject _liftedObject;
+    public static GameObject LiftedObject;
 
     private AudioSource _audio;
 
@@ -49,10 +49,10 @@ public class LiftNDrop : MonoBehaviour
                 }
             }
         }
-        else if (_liftedObject != null && IsLift)
+        else if (LiftedObject != null && IsLift)
         {
-            float distanceObjectPlayer = Vector3.Distance(gameObject.transform.position, _liftedObject.transform.position);
-            float distanceObjectPoint = Vector3.Distance(_point.position, _liftedObject.transform.position);
+            float distanceObjectPlayer = Vector3.Distance(gameObject.transform.position, LiftedObject.transform.position);
+            float distanceObjectPoint = Vector3.Distance(_point.position, LiftedObject.transform.position);
 
             if (Physics.Raycast(_playerCamera.position, Vector3.down, out hit, 10, _layerMaskForDrop))
             {
@@ -71,40 +71,40 @@ public class LiftNDrop : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (IsLift && _liftedObject != null)
+        if (IsLift && LiftedObject != null)
             Lift();
     }
 
     private void Lift()
     {
-        Vector3 liftDirection = _point.position - _liftedObject.transform.position;
+        Vector3 liftDirection = _point.position - LiftedObject.transform.position;
         _rigidbodyLiftedObject.linearVelocity = liftDirection * _speedLift;
     }
 
     private void DropWithForce()
     {
-        _liftedObject.GetComponent<Lift>().PrepareForDropWithForce(_dropForce, _playerCamera.forward);
+        LiftedObject.GetComponent<Lift>().PrepareForDropWithForce(_dropForce, _playerCamera.forward);
         PrepareForDrop();
     }
 
     private void Drop()
     {
-        _liftedObject.GetComponent<Lift>().PrepareForDrop();
+        LiftedObject.GetComponent<Lift>().PrepareForDrop();
         PrepareForDrop();
     }
 
     private void PrepareForLift(RaycastHit hit)
     {
         IsLift = true;
-        _liftedObject = hit.transform.gameObject;
-        _rigidbodyLiftedObject = _liftedObject.GetComponent<Rigidbody>();
-        _liftedObject.GetComponent<Lift>().PrepareForLift();
+        LiftedObject = hit.transform.gameObject;
+        _rigidbodyLiftedObject = LiftedObject.GetComponent<Rigidbody>();
+        LiftedObject.GetComponent<Lift>().PrepareForLift();
     }
 
     private void PrepareForDrop()
     {
         IsLift = false;
-        _liftedObject = null;
+        LiftedObject = null;
         _rigidbodyLiftedObject = null;
     }
 }

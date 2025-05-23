@@ -20,6 +20,7 @@ public class Lift : MonoBehaviour
     public void PrepareForLift()
     {
         GeneralPrepare(_liftLayer, false, CollisionDetectionMode.ContinuousSpeculative, true);
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     public void PrepareForDrop()

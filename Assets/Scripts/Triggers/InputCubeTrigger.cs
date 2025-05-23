@@ -6,6 +6,7 @@ public class InputCubeTrigger : MonoBehaviour
     [SerializeField] GameObject _triggerCube;
 
     private Animator _animator;
+    public static bool IsOpen = false;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class InputCubeTrigger : MonoBehaviour
         if(collision.gameObject == _triggerCube)
         {
             _animator.SetBool("Open", true);
+            IsOpen = true;
         }
     }
 
@@ -25,6 +27,7 @@ public class InputCubeTrigger : MonoBehaviour
         if (other.gameObject == _triggerCube)
         {
             _animator.SetBool("Open", false);
+            IsOpen = false;
         }
     }
 }

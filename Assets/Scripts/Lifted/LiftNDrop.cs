@@ -44,15 +44,15 @@ public class LiftNDrop : MonoBehaviour
         {
             if (hit.transform.CompareTag(_tag))
             {
-                if (Physics.Raycast(_charactar.transform.position, Vector3.down, out hitCanLift, 4, _layerMaskForLift))
-                {
-                    if (IsLift == false && Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]) && CheckObject(hitCanLift, hit))
+                //if (Physics.Raycast(_charactar.transform.position, Vector3.down, out hitCanLift, 4, _layerMaskForLift))
+                //{
+                    if (IsLift == false && Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))// && CheckObject(hitCanLift, hit))
                     {
                         _audio.resource = _clip;
                         _audio.Play();
                         PrepareForLift(hit);
                     }
-                }
+                //}
             }
         }
         else if (LiftedObject != null && IsLift)
@@ -65,11 +65,11 @@ public class LiftNDrop : MonoBehaviour
                 if (hit.transform.CompareTag(_tag) && distanceObjectPoint > _maxDistancePoint)
                     Drop();
             }
-            if (Physics.Raycast(_charactar.transform.position, Vector3.down, out hitCanLift, 6, _layerMaskForDrop))
-            {
-                Debug.Log("hkhdf");
-                Drop();
-            }
+            //if (Physics.Raycast(_charactar.transform.position, Vector3.down, out hitCanLift, 6, _layerMaskForDrop))
+            //{
+            //    Debug.Log("hkhdf");
+            //    Drop();
+            //}
             else if (distanceObjectPlayer > _maxDistanceObject)
                 Drop();
             else if (Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
@@ -79,13 +79,13 @@ public class LiftNDrop : MonoBehaviour
         }
     }
 
-    private bool CheckObject(RaycastHit hitFoot, RaycastHit hitPoint)
-    {
-        if(hitFoot.transform == hitPoint.transform)
-        {
+    //private bool CheckObject(RaycastHit hitFoot, RaycastHit hitPoint)
+    //{
+    //    if(hitFoot.transform == hitPoint.transform)
+    //    {
 
-        }
-    }
+    //    }
+    //}
 
     void FixedUpdate()
     {

@@ -10,6 +10,8 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private float _pointTransformSpeed;
     [SerializeField] private Transform _point;
     [SerializeField] private PlayerSoundControll _soundControll;  // ссылка на скрипт с звуком
+    [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private float _distaneRay = 4f;
 
     private float _finalSpeed;
     private float _smoothTime;
@@ -72,7 +74,7 @@ public class MovePlayer : MonoBehaviour
 
         _characterController.Move(vector);
 
-        if(vector.magnitude > 0)
+        if (vector.magnitude > 0 && CheckGrounded())
         {
             _soundControll.PlayFootSteps();
         }
@@ -146,5 +148,19 @@ public class MovePlayer : MonoBehaviour
 
         float newZ = Mathf.SmoothDamp(_point.localPosition.z, targetZ, ref velocityZ, _smoothTime);
         _point.localPosition = new Vector3(0, 0, newZ);
+    }
+
+    private bool CheckGrounded()
+    {
+        RaycastHit hit;
+        
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, _distaneRay, _groundLayer))
+        {
+            return true; // Луч попал на землю
+        }
+        else
+        {
+            return false; // Земля не найдена в пределах луча
+        }
     }
 }

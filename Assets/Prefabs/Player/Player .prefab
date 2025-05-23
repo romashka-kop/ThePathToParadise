@@ -168,6 +168,10 @@ MonoBehaviour:
   _pointTransformSpeed: 10
   _point: {fileID: 5232498626230697846}
   _soundControll: {fileID: 1436463806729322520}
+  _cameraPlayer: {fileID: 4302480790509493879}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!82 &7058930130381472923
 AudioSource:
   m_ObjectHideFlags: 0

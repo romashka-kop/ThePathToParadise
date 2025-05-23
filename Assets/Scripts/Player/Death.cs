@@ -18,6 +18,8 @@ public class Death : MonoBehaviour
         else if (other.gameObject.name == "openCube")
         {
             other.gameObject.transform.position = _spawnCube.transform.position;
+            Vector3 direction = other.GetComponent<Rigidbody>().linearVelocity.normalized;
+            other.GetComponent<Rigidbody>().linearVelocity = direction * 0;
         }
     }
 }

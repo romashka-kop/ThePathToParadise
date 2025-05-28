@@ -7811,6 +7811,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs
       objectReference: {fileID: 0}
+    - target: {fileID: 8988595894420301951, guid: cfa48dd90fa10eb44a524fc05a68fd34, type: 3}
+      propertyPath: _stateTrigger
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

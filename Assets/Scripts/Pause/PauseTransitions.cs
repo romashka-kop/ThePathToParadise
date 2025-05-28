@@ -31,10 +31,12 @@ public class PauseTransitions : MonoBehaviour
         _buttonContinue.onClick.AddListener(Continue);
         _buttonSettings.onClick.AddListener(OpenSettings);
         _buttonExit.onClick.AddListener(ExitMenu);
+        MusicGameControll.Audio.Stop();
     }
 
     private void Continue()
     {
+        MusicGameControll.Audio.Play();
         Pause.IsPause = false;
         _animatorPause.SetTrigger("ClosePause");
         ClosePausePanel();

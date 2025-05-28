@@ -4,6 +4,7 @@ using UnityEngine;
 public class MagnetRigidbody : MonoBehaviour
 {
     [SerializeField] private float _magnetForce = 100f;
+    [SerializeField] private float _speedDrop = 10f;
     private List<Rigidbody> caughtRigidbodies = new List<Rigidbody>();
     public static bool IsMagnet = false;
 
@@ -17,6 +18,11 @@ public class MagnetRigidbody : MonoBehaviour
         else if (Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[9]) && IsMagnet)
         {
             IsMagnet = false;
+        }
+        else if (Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[10]) && IsMagnet)
+        {
+            IsMagnet = false;
+            Drop();
         }
     }
 
@@ -33,6 +39,19 @@ public class MagnetRigidbody : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void Drop()
+    {
+        foreach (Rigidbody rb in caughtRigidbodies)
+        {
+            if (rb != null)
+            {
+                Vector3 direction = (rb.transform.position - gameObject.transform.position).normalized;
+                rb.AddForce(direction * _speedDrop, ForceMode.Impulse);
+            }
+        }
+
     }
 
     void OnTriggerEnter(Collider other)

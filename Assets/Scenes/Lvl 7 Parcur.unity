@@ -6416,6 +6416,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4849434333895975381, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
+      propertyPath: _stateTrigger
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8730602108963622123, guid: 1b62ff8d62cbc834786b79c232483498, type: 3}
       propertyPath: m_LocalPosition.x
       value: -39.47

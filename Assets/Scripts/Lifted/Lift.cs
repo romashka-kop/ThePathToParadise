@@ -36,9 +36,9 @@ public class Lift : MonoBehaviour
 
     private void GeneralPrepare(byte layer, bool useGravity, CollisionDetectionMode mode, bool freezzeRotation)
     {
+        _rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         this.gameObject.layer = layer;
         _rb.useGravity = useGravity;
-        _rb.collisionDetectionMode = mode;
         _rb.freezeRotation = freezzeRotation;
     }
 }

@@ -5,6 +5,7 @@ public class SoundSettingsManager : MonoBehaviour
 {
     [SerializeField] private Slider _sliderMenuSound;
     [SerializeField] private Slider _sliderSound;
+    [SerializeField] private Slider _sliderSoundGame;
     [SerializeField] private Slider _sliderEffectSound;
     [SerializeField] private Slider _sliderPlayerSound;
 
@@ -15,6 +16,9 @@ public class SoundSettingsManager : MonoBehaviour
 
         if (_sliderSound != null)
             _sliderSound.onValueChanged.AddListener(delegate { SliderSoundChange(_sliderSound); });
+
+        if (_sliderSoundGame != null)
+            _sliderSoundGame.onValueChanged.AddListener(delegate { SliderSoundGameChange(_sliderSoundGame); });
 
         if (_sliderEffectSound != null)
             _sliderEffectSound.onValueChanged.AddListener(delegate { SliderEffectSoundChange(_sliderEffectSound); });
@@ -34,6 +38,7 @@ public class SoundSettingsManager : MonoBehaviour
     {
         SettingsTransitions.DataSettings.MenuSoundValue = _sliderMenuSound.value;
         SettingsTransitions.DataSettings.MusicValue = _sliderSound.value;
+        SettingsTransitions.DataSettings.MusicGameValue = _sliderSoundGame.value;
         SettingsTransitions.DataSettings.EffectSoundValue = _sliderEffectSound.value;
         SettingsTransitions.DataSettings.PlayerSoundValue = _sliderPlayerSound.value;
     }
@@ -42,6 +47,7 @@ public class SoundSettingsManager : MonoBehaviour
     {
         _sliderMenuSound.value = SettingsTransitions.DataSettings.MenuSoundValue;
         _sliderSound.value = SettingsTransitions.DataSettings.MusicValue;
+        _sliderSoundGame.value = SettingsTransitions.DataSettings.MusicGameValue;
         _sliderEffectSound.value = SettingsTransitions.DataSettings.EffectSoundValue;
         _sliderPlayerSound.value = SettingsTransitions.DataSettings.PlayerSoundValue;
     }
@@ -54,6 +60,11 @@ public class SoundSettingsManager : MonoBehaviour
     private void SliderSoundChange(Slider slider)
     {
         SettingsTransitions.DataSettings.MusicValue = slider.value;
+    }
+
+    private void SliderSoundGameChange(Slider slider)
+    {
+        SettingsTransitions.DataSettings.MusicGameValue = slider.value;
     }
 
     private void SliderEffectSoundChange(Slider slider)

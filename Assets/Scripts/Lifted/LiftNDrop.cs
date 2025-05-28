@@ -25,7 +25,7 @@ public class LiftNDrop : MonoBehaviour
 
     private float _maxDistanceObject = 15f;
     private float _maxDistancePoint = 9f;
-    private float _rotationSpeed = 5f;
+    private float _rotationSpeed = 4f;
 
     public static GameObject LiftedObject;
 
@@ -47,7 +47,7 @@ public class LiftNDrop : MonoBehaviour
             {
                 if (hit.transform.CompareTag(_tag))
                 {
-                    if (IsLift == false && Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))// && CheckObject(hitCanLift, hit))
+                    if (IsLift == false && Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
                     {
                         _audio.resource = _clip;
                         _audio.Play();
@@ -87,7 +87,6 @@ public class LiftNDrop : MonoBehaviour
         _rigidbodyLiftedObject.linearVelocity = liftDirection * _speedLift;
 
         _rigidbodyLiftedObject.transform.rotation = Quaternion.Slerp(_rigidbodyLiftedObject.transform.rotation, _playerCamera.rotation, _rotationSpeed * Time.deltaTime);
-
     }
 
     private void DropWithForce()

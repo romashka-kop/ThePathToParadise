@@ -18,6 +18,7 @@ public class PlayerUIController : MonoBehaviour
     private TextMeshProUGUI _textTake;
     private TextMeshProUGUI _textDrop;
     private TextMeshProUGUI _textOffMagnet;
+    private TextMeshProUGUI _textDropMagnet;
     private TextMeshProUGUI _textDropForce;
 
     void Start()
@@ -26,6 +27,7 @@ public class PlayerUIController : MonoBehaviour
         _textTake = GameObject.Find("TextTake").GetComponent<TextMeshProUGUI>();
         _textDrop = GameObject.Find("TextDrop").GetComponent<TextMeshProUGUI>();
         _textOffMagnet = GameObject.Find("TextOffMagnet").GetComponent<TextMeshProUGUI>();
+        _textDropMagnet = GameObject.Find("TextDropMagnet").GetComponent<TextMeshProUGUI>();
         _textDropForce = GameObject.Find("TextDropForce").GetComponent<TextMeshProUGUI>();
     }
 
@@ -47,9 +49,15 @@ public class PlayerUIController : MonoBehaviour
             ChangeUIText("", "");
 
         if (MagnetRigidbody.IsMagnet)
+        {
             _textOffMagnet.text = $"Выключить магнит [{SettingsTransitions.DataSettings.PlayerControlKeyCode[9]}]";
+            _textDropMagnet.text = $"Взрыв энергии [{SettingsTransitions.DataSettings.PlayerControlKeyCode[10]}]";
+        }
         else
+        {
             _textOffMagnet.text = "";
+            _textDropMagnet.text = "";
+        }
     }
 
     private void ChangeUICrosshair(Texture image, string text)

@@ -19,9 +19,9 @@ public class ChangeLevelTrigger : MonoBehaviour
             if (_stateTrigger == StateTrigger.Level)
                 _dataScene.IndexLvl = _dataScene.GetId() + 1;
             else if (_stateTrigger == StateTrigger.Final)
-                _dataScene.IndexLvl = 10;
+                _dataScene.IndexLvl = 12;
             else if (_stateTrigger == StateTrigger.Final1)
-                _dataScene.IndexLvl = 11;
+                _dataScene.IndexLvl = 13;
 
             _dataScene.Calculate();
             _dataScene.Save(_dataScene, "SceneData.json");

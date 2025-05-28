@@ -283,7 +283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _door: {fileID: 0}
-  _triggerCube: {fileID: 0}
+  _isMultiplay: 0
+  _countMultiplay: 0
 --- !u!1 &7936451214167506552
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +419,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 42.172, y: 1.15, z: 39.713}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2470334047673696300}

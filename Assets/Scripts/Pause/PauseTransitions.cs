@@ -35,6 +35,7 @@ public class PauseTransitions : MonoBehaviour
 
     private void Continue()
     {
+        Pause.IsPause = false;
         _animatorPause.SetTrigger("ClosePause");
         ClosePausePanel();
         ChangePauseMode(CursorLockMode.Locked ,false, 1);
@@ -48,7 +49,9 @@ public class PauseTransitions : MonoBehaviour
 
     private void ExitMenu()
     {
+        Pause.IsPause = false;
         LiftNDrop.IsLift = false;
+        MagnetRigidbody.IsMagnet = false;
         LoadingManager.SwitchSceneLoading(0);
         SetParametrsExitToMenu();
     }

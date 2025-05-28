@@ -11,6 +11,7 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private Transform _point;
     [SerializeField] private PlayerSoundControll _soundControll;  // ссылка на скрипт с звуком
     [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private LayerMask _liftedLayer;
     [SerializeField] private float _distaneRay = 4f;
 
     private float _finalSpeed;
@@ -146,6 +147,9 @@ public class MovePlayer : MonoBehaviour
         else if (targetZ < _limitPointMin)
             targetZ = _limitPointMin;
 
+        if (CheckGroundedLifted())
+            targetZ = _limitPointMax;
+
         float newZ = Mathf.SmoothDamp(_point.localPosition.z, targetZ, ref velocityZ, _smoothTime);
         _point.localPosition = new Vector3(0, 0, newZ);
     }
@@ -153,8 +157,22 @@ public class MovePlayer : MonoBehaviour
     private bool CheckGrounded()
     {
         RaycastHit hit;
-        
+
         if (Physics.Raycast(transform.position, Vector3.down, out hit, _distaneRay, _groundLayer))
+        {
+            return true; // Луч попал на землю
+        }
+        else
+        {
+            return false; // Земля не найдена в пределах луча
+        }
+    }
+
+    private bool CheckGroundedLifted()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, _distaneRay,_liftedLayer))
         {
             return true; // Луч попал на землю
         }

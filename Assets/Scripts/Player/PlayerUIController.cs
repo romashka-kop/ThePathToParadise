@@ -17,6 +17,7 @@ public class PlayerUIController : MonoBehaviour
 
     private TextMeshProUGUI _textTake;
     private TextMeshProUGUI _textDrop;
+    private TextMeshProUGUI _textOffMagnet;
     private TextMeshProUGUI _textDropForce;
 
     void Start()
@@ -24,6 +25,7 @@ public class PlayerUIController : MonoBehaviour
         _imageCrosshair = GameObject.Find("RawImage").GetComponent<RawImage>();
         _textTake = GameObject.Find("TextTake").GetComponent<TextMeshProUGUI>();
         _textDrop = GameObject.Find("TextDrop").GetComponent<TextMeshProUGUI>();
+        _textOffMagnet = GameObject.Find("TextOffMagnet").GetComponent<TextMeshProUGUI>();
         _textDropForce = GameObject.Find("TextDropForce").GetComponent<TextMeshProUGUI>();
     }
 
@@ -43,6 +45,11 @@ public class PlayerUIController : MonoBehaviour
             ChangeUIText($"Положить [{SettingsTransitions.DataSettings.PlayerControlKeyCode[7]}]", $"Бросить [{SettingsTransitions.DataSettings.PlayerControlKeyCode[8]}]");
         else
             ChangeUIText("", "");
+
+        if (MagnetRigidbody.IsMagnet)
+            _textOffMagnet.text = $"Выключить магнит [{SettingsTransitions.DataSettings.PlayerControlKeyCode[9]}]";
+        else
+            _textOffMagnet.text = "";
     }
 
     private void ChangeUICrosshair(Texture image, string text)

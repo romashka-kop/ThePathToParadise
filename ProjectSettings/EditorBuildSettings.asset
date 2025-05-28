@@ -18,14 +18,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Lvl 2 tropa.unity
     guid: 7bd113bec3256ae4bb4575448f049928
   - enabled: 1
+    path: Assets/Scenes/8lvl.unity
+    guid: e0fa247f3b12a7d4a99aee39510d71f9
+  - enabled: 1
     path: Assets/Scenes/Lvl 3 Cube.unity
     guid: 6a3c9c022ba08cb4aa8a07846b710843
   - enabled: 1
     path: Assets/Scenes/Lvl 4 Parcur.unity
     guid: 53c6cdf9f9a6e254082ad1c76a4c4d07
   - enabled: 1
-    path: Assets/Scenes/8lvl.unity
-    guid: e0fa247f3b12a7d4a99aee39510d71f9
+    path: Assets/Scenes/lvl9.unity
+    guid: a6ac1f76c816fc043a6c65c98bde9480
   - enabled: 1
     path: Assets/Scenes/Lvl 5 Tropa_hard.unity
     guid: eea9c005eafbbf845b0b85e089b5751a
@@ -41,5 +44,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final.unity
     guid: 18de283922313434680d9daba36fbf8b
+  - enabled: 1
+    path: Assets/Scenes/Final 1.unity
+    guid: 1e162254c1813e7428110a43a66762aa
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -25,6 +25,7 @@ public class LiftNDrop : MonoBehaviour
 
     private float _maxDistanceObject = 15f;
     private float _maxDistancePoint = 9f;
+    private float _rotationSpeed = 5f;
 
     public static GameObject LiftedObject;
 
@@ -42,50 +43,37 @@ public class LiftNDrop : MonoBehaviour
 
         if (Physics.Raycast(_playerCamera.position, _playerCamera.forward, out hit, _maxDistanceRay, _layerMaskForLift))
         {
-            if (hit.transform.CompareTag(_tag))
+            if (MagnetRigidbody.IsMagnet == false)
             {
-                //if (Physics.Raycast(_charactar.transform.position, Vector3.down, out hitCanLift, 4, _layerMaskForLift))
-                //{
+                if (hit.transform.CompareTag(_tag))
+                {
                     if (IsLift == false && Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))// && CheckObject(hitCanLift, hit))
                     {
                         _audio.resource = _clip;
                         _audio.Play();
                         PrepareForLift(hit);
                     }
-                //}
+                }
             }
         }
-        else if (LiftedObject != null && IsLift)
+        else if (LiftedObject != null && IsLift && Pause.IsPause == false)
         {
             float distanceObjectPlayer = Vector3.Distance(gameObject.transform.position, LiftedObject.transform.position);
             float distanceObjectPoint = Vector3.Distance(_point.position, LiftedObject.transform.position);
 
-            if (Physics.Raycast(_playerCamera.position, Vector3.down, out hit, 10, _layerMaskForDrop))
-            {
-                if (hit.transform.CompareTag(_tag) && distanceObjectPoint > _maxDistancePoint)
-                    Drop();
-            }
-            //if (Physics.Raycast(_charactar.transform.position, Vector3.down, out hitCanLift, 6, _layerMaskForDrop))
-            //{
-            //    Debug.Log("hkhdf");
-            //    Drop();
-            //}
-            else if (distanceObjectPlayer > _maxDistanceObject)
+            if (distanceObjectPlayer > _maxDistanceObject)
                 Drop();
             else if (Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[7]))
                 Drop();
             else if (Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[8]))
                 DropWithForce();
+            else if (Physics.Raycast(_playerCamera.position, Vector3.down, out hit, 10, _layerMaskForDrop))
+            {
+                if (hit.transform.CompareTag(_tag) && distanceObjectPoint > _maxDistancePoint)
+                    Drop();
+            }
         }
     }
-
-    //private bool CheckObject(RaycastHit hitFoot, RaycastHit hitPoint)
-    //{
-    //    if(hitFoot.transform == hitPoint.transform)
-    //    {
-
-    //    }
-    //}
 
     void FixedUpdate()
     {
@@ -97,6 +85,9 @@ public class LiftNDrop : MonoBehaviour
     {
         Vector3 liftDirection = _point.position - LiftedObject.transform.position;
         _rigidbodyLiftedObject.linearVelocity = liftDirection * _speedLift;
+
+        _rigidbodyLiftedObject.transform.rotation = Quaternion.Slerp(_rigidbodyLiftedObject.transform.rotation, _playerCamera.rotation, _rotationSpeed * Time.deltaTime);
+
     }
 
     private void DropWithForce()

@@ -18,7 +18,6 @@ public class InputCubeTrigger : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(ThisCount);
         if (_isMultiplay)
         {
             if (ThisCount == _countMultiplay)
@@ -41,10 +40,13 @@ public class InputCubeTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (_isMultiplay)
-            ThisCount--;
-        else
-            SetDoor(false);
+        if (other.gameObject.name.Contains("openCube"))
+        {
+            if (_isMultiplay)
+                ThisCount--;
+            else
+                SetDoor(false);
+        }
     }
 
     private void SetDoor(bool isOpen)

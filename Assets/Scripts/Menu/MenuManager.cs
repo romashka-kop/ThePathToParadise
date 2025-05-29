@@ -1,4 +1,7 @@
+using System.IO;
+using System;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,7 +53,7 @@ public class MenuManager : MonoBehaviour
 
     public void Continue()
     {
-        LoadingManager.SwitchSceneLoading(_dataScene.GetId());
+        LoadingManager.SwitchSceneLoading(15);
     }
 
     public void NewGame()
@@ -58,7 +61,7 @@ public class MenuManager : MonoBehaviour
         _dataScene.IndexLvl = 1;
         _dataScene.Calculate();
         _dataScene.Save(_dataScene, "SceneData.json");
-        LoadingManager.SwitchSceneLoading(_dataScene.GetId());
+        LoadingManager.SwitchSceneLoading(15);
     }
 
     public void Settings()

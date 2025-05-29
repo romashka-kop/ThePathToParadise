@@ -11,7 +11,7 @@ public class MagnetRigidbody : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[9]) && IsMagnet == false)
+        if (Input.GetKeyDown(SettingsTransitions.DataSettings.PlayerControlKeyCode[9]) && IsMagnet == false && LiftNDrop.IsLift == false)
         {
             IsMagnet = true;
         }
@@ -28,7 +28,7 @@ public class MagnetRigidbody : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (IsMagnet && LiftNDrop.IsLift == false)
+        if (IsMagnet)
         {
             foreach (Rigidbody rb in caughtRigidbodies)
             {

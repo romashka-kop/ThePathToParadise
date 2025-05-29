@@ -2040,6 +2040,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5595493318532099813, guid: cfa48dd90fa10eb44a524fc05a68fd34, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1644
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538606735648672504, guid: cfa48dd90fa10eb44a524fc05a68fd34, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1502
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371591968046422734, guid: cfa48dd90fa10eb44a524fc05a68fd34, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8988595894420301951, guid: cfa48dd90fa10eb44a524fc05a68fd34, type: 3}
       propertyPath: _stateTrigger
       value: 2

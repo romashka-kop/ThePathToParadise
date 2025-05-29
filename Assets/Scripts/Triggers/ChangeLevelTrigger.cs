@@ -19,13 +19,21 @@ public class ChangeLevelTrigger : MonoBehaviour
             if (_stateTrigger == StateTrigger.Level)
                 _dataScene.IndexLvl = _dataScene.GetId() + 1;
             else if (_stateTrigger == StateTrigger.Final)
-                _dataScene.IndexLvl = 12;
-            else if (_stateTrigger == StateTrigger.Final1)
                 _dataScene.IndexLvl = 13;
+            else if (_stateTrigger == StateTrigger.Final1)
+                _dataScene.IndexLvl = 14;
 
             _dataScene.Calculate();
             _dataScene.Save(_dataScene, "SceneData.json");
-            LoadingManager.SwitchSceneLoading(_dataScene.GetId());
+
+            if(_dataScene.GetId() == 13 || _dataScene.GetId() == 14)
+            {
+                LoadingManager.SwitchSceneLoading(_dataScene.GetId());
+            }
+            else
+            {
+                LoadingManager.SwitchSceneLoading(15);
+            }
         }
     }
 }

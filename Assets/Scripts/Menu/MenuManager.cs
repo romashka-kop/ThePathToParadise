@@ -21,6 +21,8 @@ public class MenuManager : MonoBehaviour
     public static bool IsOpenedSettings = false;
     public static bool IsUploadGraphics = false;
 
+    private bool _isLvl = true;
+
 
     private const string _urlRoma = "https://vk.com/romashkaaaa_a";
     private const string _urlKirill = "https://web.telegram.org/a/#-1001617083906";
@@ -53,15 +55,23 @@ public class MenuManager : MonoBehaviour
 
     public void Continue()
     {
-        LoadingManager.SwitchSceneLoading(15);
+        if (_isLvl)
+        {
+            _isLvl = false;
+            LoadingManager.SwitchSceneLoading(15);
+        }
     }
 
     public void NewGame()
     {
-        _dataScene.IndexLvl = 1;
-        _dataScene.Calculate();
-        _dataScene.Save(_dataScene, "SceneData.json");
-        LoadingManager.SwitchSceneLoading(15);
+        if (_isLvl)
+        {
+            _isLvl = false;
+            _dataScene.IndexLvl = 1;
+            _dataScene.Calculate();
+            _dataScene.Save(_dataScene, "SceneData.json");
+            LoadingManager.SwitchSceneLoading(15);
+        }
     }
 
     public void Settings()

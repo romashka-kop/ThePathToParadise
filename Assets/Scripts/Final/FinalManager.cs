@@ -14,6 +14,8 @@ public class FinalManager : MonoBehaviour
     private const string _urlDanill = "https://t.me/seraaworld";
     private SaveDataScene _dataScene = new();
 
+    private bool _isMenu = true;
+
     private void Start()
     {
         Init();
@@ -36,7 +38,11 @@ public class FinalManager : MonoBehaviour
 
     private void ClickToMenu()
     {
-        LoadingManager.SwitchSceneLoading(0);
+        if (_isMenu)
+        {
+            _isMenu = false;
+            LoadingManager.SwitchSceneLoading(0);
+        }
     }
 
     private void ClickToRoma()

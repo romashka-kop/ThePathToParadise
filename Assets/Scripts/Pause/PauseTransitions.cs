@@ -19,6 +19,8 @@ public class PauseTransitions : MonoBehaviour
     private Animator _animatorPause;
     private Animator _animatorSettings;
 
+    private bool _isMenu = true;
+
     void Start()
     {
         Init();
@@ -51,11 +53,15 @@ public class PauseTransitions : MonoBehaviour
 
     private void ExitMenu()
     {
-        Pause.IsPause = false;
-        LiftNDrop.IsLift = false;
-        MagnetRigidbody.IsMagnet = false;
-        LoadingManager.SwitchSceneLoading(0);
-        SetParametrsExitToMenu();
+        if (_isMenu)
+        {
+            _isMenu = false;
+            Pause.IsPause = false;
+            LiftNDrop.IsLift = false;
+            MagnetRigidbody.IsMagnet = false;
+            LoadingManager.SwitchSceneLoading(0);
+            SetParametrsExitToMenu();
+        }
     }
 
     private async void SetParametrsExitToMenu()

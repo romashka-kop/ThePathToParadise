@@ -7,6 +7,7 @@ public class StoryManager : MonoBehaviour
 
     private SaveDataScene _scene = new();
     private StoryCollection _storyCollection = new();
+    private bool _isRead = true;
 
     void Start()
     {
@@ -17,8 +18,9 @@ public class StoryManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && _isRead)
         {
+            _isRead = false;
             LoadingManager.SwitchSceneLoading(_scene.GetId());
         }
     }
